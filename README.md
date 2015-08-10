@@ -9,3 +9,12 @@ Webspinr is a drag-and-drop website builder with a Rails backend and Backbone fr
 - [ ] Click on the elements to change their properties
 - [ ] View the live website they are building
 - [ ] Download the html/css of the website they built
+
+
+## Implementation Timeline
+
+### Phase 1:
+
+### Phase 1:
+
+### Phase 1:
