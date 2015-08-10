@@ -10,12 +10,21 @@ Webspinr is a drag-and-drop website builder with a Rails backend and Backbone fr
 - [ ] View the live website they are building
 - [ ] Download the html/css of the website they built
 
+## Design Docs
+* [View Wireframes][views]
+* [DB schema][schema]
+
+[views]: ./docs/views.md
+[schema]: ./docs/schema.md
+
 
 ## Implementation Timeline
 
 ### Phase 1: Site Creation (<1 day)
 
 First I will allow public access to a page for creating a new site. Users will be able to create a new site with a simple form in backbone and view a very stripped down version of the site creation page.
+
+[Details][phase-one]
 
 ### Phase 2: Viewing created sites (~1 day)
 
@@ -38,3 +47,11 @@ I will add a button that will package up the html from the page and instead of p
 - [ ] Option to download the apps html and css and a lite webserver
 - [ ] Adding pictures to created sites
 - [ ] Adding dynamic content to created sites
+
+
+
+[phase-one]: ./docs/phases/phase1.md
+[phase-two]: ./docs/phases/phase2.md
+[phase-three]: ./docs/phases/phase3.md
+[phase-four]: ./docs/phases/phase4.md
+[phase-five]: ./docs/phases/phase5.md
