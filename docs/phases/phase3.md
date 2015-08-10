@@ -1,4 +1,4 @@
-# Phase 2: Viewing created sites
+# Phase 3: Adding elements
 
 ## Rails
 ### Models
