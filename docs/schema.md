@@ -1,11 +1,13 @@
 # Schema Information
 
-## markdowns
+## siteElements
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 page_id     | integer   | not null, foreign key (references pages)
 content     | text      | not null
+tag         | string    | not null
+classes     | string    | 
 
 ## pages
 column name | data type | details
@@ -14,19 +16,13 @@ id          | integer   | not null, primary key
 site_id     | integer   | not null, foreign key (references sites)
 title       | text      | not null
 
-## stylesheets
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-page_id     | integer   | not null, foreign key (references pages)
-content     | site      | not null
-
 ## sites
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 user_id     | integer   | not null, foreign key (references users)
 title       | string    | not null
+description | text      |
 
 ## users
 column name     | data type | details
