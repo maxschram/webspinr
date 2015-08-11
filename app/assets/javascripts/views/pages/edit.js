@@ -13,12 +13,13 @@ Webspinr.Views.EditPage = Backbone.CompositeView.extend({
   addElementView: function (element) {
     var subview = new Webspinr.Views.EditElement({ model: element });
     this.addSubview("#elements", subview);
+    subview.render();
   },
 
   render: function () {
     this.$el.html(this.template({ page: this.model }));
-    this.delegateEvents();
     this.attachSubviews();
+    this.onRender();
     return this;
   }
 });

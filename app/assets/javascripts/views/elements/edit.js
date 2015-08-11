@@ -15,11 +15,14 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    console.log(this.$el);
     this.$el.html(this.template({ element: this.model }));
-    this.$el.draggable();
     this.delegateEvents();
+    this.onRender();
     this.attachSubviews();
     return this;
+  },
+
+  onRender: function () {
+    this.$el.draggable();
   }
 });
