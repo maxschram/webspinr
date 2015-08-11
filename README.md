@@ -28,11 +28,11 @@ First I will allow public access to a page for creating a new site. Users will b
 
 ### Phase 2: Viewing created sites (~1 day)
 
-I will first add API routes to save created website's HTML to the database. I will add a backbone model to package up the created site's html and post it to the rails server. I will then add a route for viewing sites that will render the requested page's html.
+I will first add API routes to save created website's elements to the database. I will add a backbone model for site elements that will package up the elements's html and post it to the rails server. I will then add a route for viewing sites that will request all the site's elements from the database from the server and create a backbone app to display them.
 
 [Details][phase-two]
 
-### Phase 3: Adding elements (~2 days)
+### Phase 3: Adding more elements (~2 days)
 
 I will add a menu in backbone to the site creation page which will allow users to select elements to add to the page. The elements will be represented by a backbone subview which will have a draggable element that can be repositioned around the page. I will add a save site button that will parse all the elements in the page into HTML and then post to the server to save or update the site.
 
