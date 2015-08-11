@@ -16,7 +16,10 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
     var element = new Webspinr.Models.Element({
       tag: "p",
       content: "Click here to enter your text...",
-      page_id: this.currentPageView.model.id
+      page_id: this.currentPageView.model.id,
+      top: "50%",
+      left: "50%",
+      classes: "text"
     });
     this.currentPageView.collection.add(element);
   },
@@ -25,7 +28,9 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
     var element = new Webspinr.Models.Element({
       tag: "div",
       classes: "box",
-      page_id: this.currentPageView.model.id
+      page_id: this.currentPageView.model.id,
+      top: "50%",
+      left: "50%"
     });
     this.currentPageView.collection.add(element);
   },
