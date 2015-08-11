@@ -14,7 +14,8 @@ Webspinr.Views.NewSite = Backbone.View.extend({
     return this;
   },
 
-  createSite: function () {
+  createSite: function (e) {
+    e.preventDefault();
     var formData = this.$("form").serializeJSON();
     var site = new Webspinr.Models.Site(formData);
     site.save({}, {

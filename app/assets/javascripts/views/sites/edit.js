@@ -1,4 +1,4 @@
-Webspinr.Views.NewSite = Backbone.View.extend({
+Webspinr.Views.EditSite = Backbone.View.extend({
   model: Webspinr.Models.Site,
   template: JST["sites/edit"],
   events: {
@@ -12,4 +12,5 @@ Webspinr.Views.NewSite = Backbone.View.extend({
   render: function () {
     this.$el.html(this.template({ site: this.model }));
     return this;
-  },
+  }
+});

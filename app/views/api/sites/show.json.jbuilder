@@ -1,1 +1,1 @@
-json.partial('site', site: @site)
+json.partial!('site', site: @site)

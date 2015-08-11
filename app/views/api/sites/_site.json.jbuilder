@@ -1,1 +1,1 @@
-json.(site, :title, :description)
+json.(site, :id, :title, :description)
