@@ -6,7 +6,6 @@ class Site < ActiveRecord::Base
   private
 
   def ensure_page
-    debugger
     pages.create(title: "New Page")
   end
 end

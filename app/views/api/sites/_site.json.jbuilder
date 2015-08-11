@@ -1,5 +1,5 @@
 json.(site, :id, :title, :description)
 
 json.pages do
-  json.partial!('page', collection: site.pages, as: :page)
+  json.partial!('api/pages/page', collection: site.pages, as: :page)
 end
