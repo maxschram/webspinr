@@ -19,7 +19,7 @@ Webspinr.Views.EditSite = Backbone.CompositeView.extend({
   },
 
   addElementsMenu: function () {
-    var subview = new Webspinr.Views.ElementsMenu();
+    var subview = this._elementsMenuView = new Webspinr.Views.ElementsMenu();
     this.addSubview(".menu-bar", subview);
   },
 
@@ -29,6 +29,7 @@ Webspinr.Views.EditSite = Backbone.CompositeView.extend({
       model: page,
       collection: page.elements()
     });
+    this._elementsMenuView.currentPageView = subview;
     this.addSubview("#page", subview);
   },
 

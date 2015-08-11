@@ -2,6 +2,10 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
   template: JST["menus/elements"],
   className: 'elements-menu',
 
+  initialize: function (options) {
+
+  },
+
   events: {
     "click .text": "createText",
     "click .list": "createList",
@@ -9,15 +13,25 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
   },
 
   createText: function () {
-    alert("text");
+    var element = new Webspinr.Models.Element({
+      tag: "p",
+      content: "Click here to enter your text...",
+      page_id: this.currentPageView.model.id
+    });
+    this.currentPageView.collection.add(element);
+  },
+
+  createBox: function () {
+    var element = new Webspinr.Models.Element({
+      tag: "div",
+      classes: "box",
+      page_id: this.currentPageView.model.id
+    });
+    this.currentPageView.collection.add(element);
   },
 
   createList: function () {
     alert("list");
-  },
-
-  createBox: function () {
-    alert("box");
   },
 
   render: function () {
