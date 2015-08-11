@@ -10,7 +10,7 @@ Webspinr.Models.Site = Backbone.Model.extend({
 
   parse: function (payload) {
     if (payload.pages) {
-      this.pages().set(payload.pages);
+      this.pages().set(payload.pages, { parse: true });
       delete payload.pages;
     }
 

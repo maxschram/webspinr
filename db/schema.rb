@@ -17,12 +17,12 @@ ActiveRecord::Schema.define(version: 20150811181153) do
   enable_extension "plpgsql"
 
   create_table "elements", force: :cascade do |t|
-    t.text     "content"
-    t.string   "tag",        null: false
-    t.string   "classes"
-    t.integer  "page_id",    null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text     "content",    default: "", null: false
+    t.string   "tag",                     null: false
+    t.string   "classes",    default: "", null: false
+    t.integer  "page_id",                 null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   add_index "elements", ["page_id"], name: "index_elements_on_page_id", using: :btree

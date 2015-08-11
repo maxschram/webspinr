@@ -1,4 +1,4 @@
-Webspinr.Views.EditSite = Backbone.View.extend({
+Webspinr.Views.EditSite = Backbone.CompositeView.extend({
   model: Webspinr.Models.Site,
   template: JST["sites/edit"],
   events: {
@@ -6,11 +6,12 @@ Webspinr.Views.EditSite = Backbone.View.extend({
   },
 
   initialize: function () {
-    this.addPageView();
+    this.listenTo(this.model, "sync", this.addPageView);
+    this.listenTo(this.model, "sync", this.render);
   },
 
   addPageView: function () {
-    var page = this.model.pages()[0];
+    var page = this.model.pages().models[0];
     var subview = new Webspinr.Views.EditPage({
       model: page,
       collection: page.elements()
