@@ -9,7 +9,8 @@ Webspinr.Routers.AppRouter = Backbone.Router.extend({
   },
 
   newSite: function () {
-    
+    var view = new Webspinr.Views.NewSite();
+    this._swapView(view);
   },
 
   _swapView: function (view) {
