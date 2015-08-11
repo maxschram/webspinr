@@ -1,0 +1,1 @@
+json.(site, :title, :description)
