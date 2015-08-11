@@ -1,9 +1,14 @@
-window.Webspinr =
-  Models: {}
-  Collections: {}
-  Views: {}
-  Routers: {}
-  initialize: -> alert 'Hello from Backbone!'
+window.Webspinr = {
+  Models: {},
+  Collections: {},
+  Views: {},
+  Routers: {},
+  initialize: function () {
+    new Webspinr.Routers.AppRouter();
+    Backbone.history.start();
+  }
+};
 
-$(document).ready ->
-  Webspinr.initialize()
+$(document).ready(function () {
+  Webspinr.initialize();
+});
