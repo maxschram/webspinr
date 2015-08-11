@@ -2,12 +2,25 @@ Webspinr.Views.EditSite = Backbone.CompositeView.extend({
   model: Webspinr.Models.Site,
   template: JST["sites/edit"],
   events: {
-    "click .live": "viewLive"
+    "click .live": "viewLive",
+    "mouseenter .menu-button": "toggleMenu",
+    "mouseleave .menu-bar": "toggleMenu"
   },
+
 
   initialize: function () {
     this.listenTo(this.model, "sync", this.addPageView);
     this.listenTo(this.model, "sync", this.render);
+    this.addElementsMenu();
+  },
+
+  toggleMenu: function () {
+    this.$(".menu-bar").toggleClass("show");
+  },
+
+  addElementsMenu: function () {
+    var subview = new Webspinr.Views.ElementsMenu();
+    this.addSubview(".menu-bar", subview);
   },
 
   addPageView: function () {
