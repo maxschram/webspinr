@@ -1,17 +1,24 @@
 # Schema Information
 
-## html
+## markdowns
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+page_id     | integer   | not null, foreign key (references pages)
+content     | text      | not null
+
+## pages
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 site_id     | integer   | not null, foreign key (references sites)
-content     | text      | not null
+title       | text      | not null
 
 ## stylesheets
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-site_id     | integer   | not null, foreign key (references sites)
+page_id     | integer   | not null, foreign key (references pages)
 content     | site      | not null
 
 ## sites
