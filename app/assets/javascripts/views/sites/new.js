@@ -1,4 +1,4 @@
-Webspinr.Views.NewSite = Backbone.View.extend({
+Webspinr.Views.NewSite = Backbone.CompositeView.extend({
   model: Webspinr.Models.Site,
   template: JST["sites/new"],
   events: {
