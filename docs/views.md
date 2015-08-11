@@ -16,8 +16,8 @@
 ![website-progress]
 
 
-[new-builder]: ./wireframes/new_builder.png
-[builder-menu]: ./wireframes/builder_menu.png
-[site-options]: ./wireframes/site_options.png
-[element-options]: ./wireframes/element_options.png
-[website-progress]: ./wireframes/website_progress.png
+[new-builder]: ./wireframes/new_builder.jpg
+[builder-menu]: ./wireframes/builder_menu.jpg
+[site-options]: ./wireframes/site_options.jpg
+[element-options]: ./wireframes/element_options.jpg
+[website-progress]: ./wireframes/website_progress.jpg
