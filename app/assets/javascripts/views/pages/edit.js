@@ -17,6 +17,7 @@ Webspinr.Views.EditPage = Backbone.CompositeView.extend({
 
   render: function () {
     this.$el.html(this.template({ page: this.model }));
+    this.delegateEvents();
     this.attachSubviews();
     return this;
   }
