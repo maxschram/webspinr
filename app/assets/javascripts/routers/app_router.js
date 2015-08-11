@@ -2,7 +2,7 @@ Webspinr.Routers.AppRouter = Backbone.Router.extend({
 
   routes: {
     '': 'newSite',
-    'sites/:id/edit': 'editSite'
+    'sites/:id': 'showSite'
   },
 
   initialize: function (options) {
@@ -18,6 +18,13 @@ Webspinr.Routers.AppRouter = Backbone.Router.extend({
     var site = new Webspinr.Models.Site({ id: id });
     site.fetch();
     var view = new Webspinr.Views.EditSite({ model: site });
+    this._swapView(view);
+  },
+
+  showSite: function (id) {
+    var site = new Webspinr.Models.Site({ id: id });
+    site.fetch();
+    var view = new Webspinr.Views.Site({ model: site });
     this._swapView(view);
   },
 

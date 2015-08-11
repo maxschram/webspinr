@@ -1,5 +1,5 @@
-Webspinr.Views.EditElement = Backbone.CompositeView.extend({
-  template: JST["elements/edit"],
+Webspinr.Views.Element = Backbone.CompositeView.extend({
+  template: JST["elements/element"],
 
   initialize: function () {
     this.listenTo(this.model, "sync", this.render)

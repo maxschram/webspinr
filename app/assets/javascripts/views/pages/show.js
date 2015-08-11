@@ -1,5 +1,5 @@
-Webspinr.Views.EditPage = Backbone.CompositeView.extend({
-  template: JST["pages/edit"],
+Webspinr.Views.Page = Backbone.CompositeView.extend({
+  template: JST["pages/page"],
 
   initialize: function () {
     this.listenTo(this.collection, 'add', this.addElementView);
@@ -7,7 +7,7 @@ Webspinr.Views.EditPage = Backbone.CompositeView.extend({
   },
 
   addElementView: function (element) {
-    var subview = new Webspinr.Views.EditElement({ model: element });
+    var subview = new Webspinr.Views.Element({ model: element });
     this.addSubview("#elements", subview);
   },
 
