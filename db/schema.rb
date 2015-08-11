@@ -18,12 +18,12 @@ ActiveRecord::Schema.define(version: 20150811171815) do
 
   create_table "pages", force: :cascade do |t|
     t.string   "title",      null: false
-    t.integer  "sites_id"
+    t.integer  "site_id",    null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "pages", ["sites_id"], name: "index_pages_on_sites_id", using: :btree
+  add_index "pages", ["site_id"], name: "index_pages_on_site_id", using: :btree
 
   create_table "sites", force: :cascade do |t|
     t.string   "title",       null: false
