@@ -7,7 +7,7 @@ Webspinr.Views.EditPage = Backbone.CompositeView.extend({
   },
 
   addElementView: function (element) {
-    var subview = new ElementView({ model: element });
+    var subview = new Webspinr.Views.EditElement({ model: element });
     this.addSubview("#elements", subview);
   },
 
