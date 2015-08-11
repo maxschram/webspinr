@@ -2,6 +2,7 @@ Webspinr.Routers.AppRouter = Backbone.Router.extend({
 
   routes: {
     '': 'newSite',
+    'sites/:id/edit': 'editSite',
     'sites/:id': 'showSite'
   },
 

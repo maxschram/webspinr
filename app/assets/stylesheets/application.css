@@ -64,10 +64,11 @@ table {
 }
 
  #elements {
-   border: 2px solid black;
    height: 800px;
    background: green;
  }
 
-body {
-}
+ #page.editing {
+   border: 2px solid black;
+   margin-top: 30px;
+ }
