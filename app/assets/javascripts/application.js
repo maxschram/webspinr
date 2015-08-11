@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery_serializejson
 //= require underscore
 //= require backbone
 //= require webspinr
