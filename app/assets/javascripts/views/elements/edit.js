@@ -11,7 +11,8 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
     "dblclick": "editElement",
     "blur input": "saveText",
     "submit form": "saveText",
-    "contextmenu": "showPropertiesMenu"
+    "contextmenu": "showPropertiesMenu",
+    "mouseleave .element-properties-menu": "removePropertiesMenu"
   },
 
   className: function (){
@@ -33,10 +34,16 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
     this.addMenu();
   },
 
+  removePropertiesMenu: function () {
+    this.removeSubview(".element-properties-menu", this._propertiesMenuView);
+    this._propertiesMenuView = null;
+  },
+
   addMenu: function () {
     var subview = new Webspinr.Views.ElementPropertiesMenu({
       model: this.model
     });
+    this._propertiesMenuView = subview;
     this.addSubview(".element-properties-menu", subview);
     subview.render();
   },
@@ -69,9 +76,9 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
     this.$el.html(this.template({ element: this.model }));
     this.$el.attr("style", this.model.get("style"));
     this.$el.attr("src", this.model.get("src"));
-    this.delegateEvents();
     this.onRender();
     this.attachSubviews();
+    this.delegateEvents();
     return this;
   },
 
@@ -87,12 +94,13 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
     });
 
     if (this.model.get("tag") !== "img") {
-    this.$el.resizable();
-    this.$el.resizable("destroy");
-    this.$el.resizable({
-      autoHide: true,
-      stop: this.saveStyle.bind(this)
-    });
+      this.$el.resizable();
+      this.$el.resizable("destroy");
+      this.$el.resizable({
+        autoHide: true,
+        stop: this.saveStyle.bind(this)
+      });
     }
+    // Backbone.CompositeView.prototype.onRender.call(this);
   }
 });

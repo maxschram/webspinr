@@ -165,3 +165,18 @@ table {
 	width: 100%;
 	height: 100%;
 }
+
+.element-properties-menu .menu{
+	position: relative;
+	left: -120px;
+	background: yellow;
+	width: 120px;
+	height: 200px;
+}
+
+.element-properties-menu .menu button {
+	background: red;
+	outline: none;
+	width: 80px;
+	border: 0;
+}
