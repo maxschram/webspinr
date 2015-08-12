@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20150811181153) do
   create_table "elements", force: :cascade do |t|
     t.text     "content",    default: "", null: false
     t.string   "tag",                     null: false
-    t.text     "attributes",              null: false
+    t.text     "attrs",                   null: false
     t.integer  "page_id",                 null: false
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false

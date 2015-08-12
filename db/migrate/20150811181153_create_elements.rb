@@ -3,7 +3,7 @@ class CreateElements < ActiveRecord::Migration
     create_table :elements do |t|
       t.text :content, null: false, default: ""
       t.string :tag, null: false
-      t.text :attributes, null: false 
+      t.text :attrs, null: false 
       t.references :page, index: true, null: false
       t.timestamps null: false
     end
