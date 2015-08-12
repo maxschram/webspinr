@@ -32,6 +32,11 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
     var view = this;
     this.$el.draggable({
       stop: function (e, ui) {
+        this.model.save({}, {
+          success: function () {
+            alert("saved");
+          }
+        });
       }.bind(this)
     });
   }

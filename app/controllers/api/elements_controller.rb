@@ -1,4 +1,4 @@
-class ElementsController < ApplicationController
+class Api::ElementsController < ApplicationController
 
   def create
     @element = Element.new(element_params)
