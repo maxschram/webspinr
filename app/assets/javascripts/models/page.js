@@ -1,5 +1,7 @@
 Webspinr.Models.Page = Backbone.Model.extend({
 
+  urlRoot: 'api/pages',
+
   elements: function () {
     if (!this._elements) {
       this._elements = new Webspinr.Collections.Elements();

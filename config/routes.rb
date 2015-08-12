@@ -7,6 +7,9 @@ Rails.application.routes.draw do
               defaults: { format: 'json'}
     resources :elements,
               only: [:update, :create, :destroy],
+              defaults: { format: 'json'},
+    resources :pages,
+              only: [:update, :create, :destroy],
               defaults: { format: 'json'}
   end
 end
