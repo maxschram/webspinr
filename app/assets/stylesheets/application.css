@@ -155,3 +155,7 @@ table {
 .element.text .form {
   background: red;
 }
+
+.element.text {
+	z-index: 1;
+}
