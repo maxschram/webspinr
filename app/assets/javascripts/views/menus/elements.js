@@ -78,9 +78,21 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
   createBox: function () {
     var element = new Webspinr.Models.Element({
       tag: "div",
-      classes: "box",
       page_id: this.currentPageView.model.id,
-      style: "top: 50%; left: 50%; position: absolute"
+      attrs: {
+        style: {
+          top: "50%",
+          left: "50%",
+          position: "absolute",
+          width: "50px",
+          height: "50px"
+        }
+      }
+    });
+    element.save({}, {
+      success: function () {
+        alert("it saved");
+      }
     });
     this.currentPageView.collection.add(element);
   },
