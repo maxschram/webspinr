@@ -26,12 +26,21 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
   initialize: function () {
     this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.model, "change", this.saveElement);
-    // this.addMenu();
+    this.listenTo(this.model, "change:color", this.setColor);
+    this.setColor();
   },
 
   showPropertiesMenu: function (e) {
     e.preventDefault();
     this.addMenu();
+  },
+
+  setColor: function () {
+    if (this.model.get("tag") === "div") {
+      this.$el.css("background-color", this.model.get("color"));
+    } else {
+      this.$el.css("color", this.model.get("color"));
+    }
   },
 
   removePropertiesMenu: function () {

@@ -12,7 +12,16 @@ Webspinr.Views.Element = Backbone.CompositeView.extend({
   initialize: function () {
     this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.model, "change", this.saveElement);
+    this.setColor();
     this.render();
+  },
+
+  setColor: function () {
+    if (this.model.get("tag") === "div") {
+      this.$el.css("background-color", this.model.get("color"));
+    } else {
+      this.$el.css("color", this.model.get("color"));
+    }
   },
 
   render: function () {
