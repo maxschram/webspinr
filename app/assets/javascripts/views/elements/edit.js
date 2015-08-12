@@ -8,8 +8,9 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
   },
 
   events: {
-    "click": "editElement",
-    "blur input": "saveText"
+    "dblclick": "editElement",
+    "blur input": "saveText",
+    "submit form": "saveText"
   },
 
   className: function (){
@@ -26,6 +27,7 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
   },
 
   saveText: function (e) {
+    e.preventDefault();
     var view = this;
     var data = $(e.currentTarget).serializeJSON();
     view.model.save(data, {
