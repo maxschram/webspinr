@@ -1,1 +1,1 @@
-json.(element, :id, :tag, :classes, :content, :style, :src)
+json.(element, :id, :tag, :classes, :content, :style, :src, :color)

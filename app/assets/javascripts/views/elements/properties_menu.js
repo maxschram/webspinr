@@ -16,7 +16,7 @@ Webspinr.Views.ElementPropertiesMenu = Backbone.CompositeView.extend({
     // if (this.model.get("tag") === "div") {
       // add class and add color in css file
     // }
-    this.model.set("color", color);
+    this.model.save("color", color);
   },
 
   render: function () {

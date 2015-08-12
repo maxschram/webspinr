@@ -34,6 +34,6 @@ class Api::ElementsController < ApplicationController
 
   def element_params
     params.require(:element)
-          .permit(:page_id, :content, :tag, :classes, :style, :src)
+          .permit(:page_id, :content, :tag, :classes, :style, :src, :color)
   end
 end

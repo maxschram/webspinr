@@ -12,7 +12,6 @@ Webspinr.Views.Element = Backbone.CompositeView.extend({
   initialize: function () {
     this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.model, "change", this.saveElement);
-    this.setColor();
     this.render();
   },
 
@@ -32,5 +31,9 @@ Webspinr.Views.Element = Backbone.CompositeView.extend({
     this.onRender();
     this.attachSubviews();
     return this;
+  },
+
+  onRender: function () {
+    this.setColor();
   }
 });

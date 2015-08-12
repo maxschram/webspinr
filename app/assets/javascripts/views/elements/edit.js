@@ -26,8 +26,6 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
   initialize: function () {
     this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.model, "change", this.saveElement);
-    this.listenTo(this.model, "change:color", this.setColor);
-    this.setColor();
   },
 
   showPropertiesMenu: function (e) {
@@ -99,8 +97,13 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
     this.model.save({ style: this.$el.attr("style")});
   },
 
+  saveElement: function () {
+    this.model.save();
+  },
+
   onRender: function () {
     var view = this;
+    this.setColor();
 
     this.$el.draggable({
       stop: this.saveStyle.bind(this)
