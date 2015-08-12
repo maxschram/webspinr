@@ -12,10 +12,19 @@ Webspinr.Views.EditSite = Backbone.CompositeView.extend({
     this.listenTo(this.model, "sync", this.addPageView);
     this.listenTo(this.model, "sync", this.render);
     this.addElementsMenu();
+    this.addPagesMenu();
   },
 
   toggleMenu: function () {
     this.$(".menu-bar").toggleClass("show");
+  },
+
+  addPagesMenu: function () {
+    var subview = this._pagesMenuView = new Webspinr.Views.PagesMenu({
+      collection: this.model.pages()
+    });
+    this.addSubview(".menu-bar", subview);
+    subview.render();
   },
 
   addElementsMenu: function () {
