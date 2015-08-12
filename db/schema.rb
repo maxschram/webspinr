@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20150811181153) do
 
   create_table "elements", force: :cascade do |t|
     t.text     "content",    default: "", null: false
+    t.string   "style",      default: "", null: false
     t.string   "tag",                     null: false
     t.string   "classes",    default: "", null: false
     t.integer  "page_id",                 null: false
