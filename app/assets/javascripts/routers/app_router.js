@@ -5,7 +5,7 @@ Webspinr.Routers.AppRouter = Backbone.Router.extend({
     'sites/:id/edit': 'editSite',
     'sites/:id/edit/:pageId': 'editSitePage',
     'sites/:id': 'showSiteIndex',
-    'sites/:id/:pageTitle': 'showSitePage'
+    'sites/:id/:pageId': 'showSitePage'
   },
 
   initialize: function (options) {
@@ -34,14 +34,14 @@ Webspinr.Routers.AppRouter = Backbone.Router.extend({
   showSiteIndex: function (id) {
     var site = new Webspinr.Models.Site({ id: id });
     site.fetch();
-    var view = new Webspinr.Views.Site({ model: site, page: "index" });
+    var view = new Webspinr.Views.Site({ model: site});
     this._swapView(view);
   },
 
-  showSitePage: function (id, pageTitle) {
+  showSitePage: function (id, pageId) {
     var site = new Webspinr.Models.Site({ id: id});
     site.fetch();
-    var view = new Webspinr.Views.Site({ model: site, page: pageTitle});
+    var view = new Webspinr.Views.Site({ model: site, pageId: id});
     this._swapView(view);
   },
 

@@ -8,15 +8,16 @@ Webspinr.Views.Site = Backbone.CompositeView.extend({
   initialize: function (options) {
     this.listenTo(this.model, "sync", this.addPageView);
     this.listenTo(this.model, "sync", this.render);
-    this.page = options.page;
+    this.pageId = options.pageId;
   },
 
   addPageView: function () {
     var page;
-    if (this.page === "index") {
+    if (!this.pageId) {
       page = this.model.pages().at(0);
     } else {
-      page = this.model.pages().findWhere({ title: this.page });
+      // page = this.model.pages().findWhere({ title: this.page });
+      page = this.model.pages().findWhere({ id: this.pageId });
       if (!page) { alert("page not found");}
     }
 
