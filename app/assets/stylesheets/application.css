@@ -127,6 +127,7 @@ table {
    width: 150px;
    height: 40px;
    font-size: 24px;
+   z-index: 1;
  }
 
  #page.editing {

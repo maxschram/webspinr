@@ -4,7 +4,7 @@ class Api::ElementsController < ApplicationController
     @element = Element.new(element_params)
 
     if @element.save
-      render 'element', element: @element
+      render 'show'
     else
       render @element.errors.full_messages, status: :unprocessable_entity
     end
@@ -14,7 +14,7 @@ class Api::ElementsController < ApplicationController
     @element = Element.find(params[:id])
 
     if @element.update(element_params)
-      render 'element', element: @element
+      render 'show'
     else
       render @element.errors.full_messages, status: :unprocessable_entity
     end
@@ -24,9 +24,9 @@ class Api::ElementsController < ApplicationController
     @element = Element.find(params[:id])
 
     if @element.destroy
-      render 'element', element: @element
+      render 'show'
     else
-      render 'element', element: @element, status: :unprocessable_entity
+      render 'show', status: :unprocessable_entity
     end
   end
 

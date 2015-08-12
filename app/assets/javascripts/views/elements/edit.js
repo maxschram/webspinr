@@ -1,6 +1,10 @@
 Webspinr.Views.EditElement = Backbone.CompositeView.extend({
   template: JST["elements/edit"],
 
+  events: {
+    "click": "editElement"
+  },
+
   className: function (){
     return "element " + this.model.get("classes");
   },
@@ -12,11 +16,14 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
   initialize: function () {
     this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.model, "change", this.saveElement);
-    this.render();
   },
 
   saveElement: function () {
-    alert("save");
+    // alert saving
+  },
+
+  editElement: function () {
+    alert("Edit element");
   },
 
   render: function () {
@@ -32,9 +39,9 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
     var view = this;
     this.$el.draggable({
       stop: function (e, ui) {
-        this.model.save({}, {
+        this.model.save({ style: this.$el.attr("style")}, {
           success: function () {
-            alert("saved");
+            // alert saving
           }
         });
       }.bind(this)

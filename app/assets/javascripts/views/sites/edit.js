@@ -42,6 +42,7 @@ Webspinr.Views.EditSite = Backbone.CompositeView.extend({
   render: function () {
     this.$el.html(this.template({ site: this.model }));
     this.attachSubviews();
+    this.onRender();
     return this;
   }
 });
