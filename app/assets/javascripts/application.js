@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui/draggable
+//= require jquery-ui/resizable
 //= require jquery_serializejson
 //= require underscore
 //= require backbone

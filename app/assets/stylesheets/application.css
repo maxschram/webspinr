@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require jquery-ui/draggable
+ *= require jquery-ui/resizable
  *= require_self
  */
 
@@ -144,6 +145,7 @@ table {
 #page.editing .element:hover {
   cursor: pointer;
   border: 2px dotted black;
+	z-index: 2;
 }
 
 .element.text.editing {

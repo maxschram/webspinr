@@ -61,14 +61,22 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
 
   onRender: function () {
     var view = this;
+    this.$el.resizable();
+    this.$el.resizable("destroy");
+    this.$el.resizable({
+      autoHide: true
+    });
+
     this.$el.draggable({
       stop: function (e, ui) {
         this.model.save({ style: this.$el.attr("style")}, {
           success: function () {
-            // alert saving
+            view.render();
+            // alert saved
           }
         });
       }.bind(this)
     });
+
   }
 });
