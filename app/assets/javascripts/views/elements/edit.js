@@ -12,7 +12,7 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
     "blur input": "saveText",
     "submit form": "saveText",
     "contextmenu": "showPropertiesMenu",
-    "mouseleave .element-properties-menu": "removePropertiesMenu"
+    "mouseleave": "removePropertiesMenu"
   },
 
   className: function (){
@@ -35,17 +35,21 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
   },
 
   removePropertiesMenu: function () {
-    this.removeSubview(".element-properties-menu", this._propertiesMenuView);
-    this._propertiesMenuView = null;
+    if (this._propertiesMenuView) {
+      this.removeSubview(".element-properties-menu", this._propertiesMenuView);
+      this._propertiesMenuView = null;
+    }
   },
 
   addMenu: function () {
-    var subview = new Webspinr.Views.ElementPropertiesMenu({
-      model: this.model
-    });
-    this._propertiesMenuView = subview;
-    this.addSubview(".element-properties-menu", subview);
-    subview.render();
+    if (!this._propertiesMenuView) {
+      var subview = new Webspinr.Views.ElementPropertiesMenu({
+        model: this.model
+      });
+      this._propertiesMenuView = subview;
+      this.addSubview(".element-properties-menu", subview);
+      subview.render();
+    }
   },
 
   saveText: function (e) {

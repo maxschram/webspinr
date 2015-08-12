@@ -13,8 +13,8 @@ Webspinr.Views.ElementPropertiesMenu = Backbone.CompositeView.extend({
 
   changeColor: function () {
     var color = prompt("Enter a color"); //TODO: Replace with colorpicker
-
-    this.model.set("color", color);
+    if (this.model.get("tag") === "div") {
+    }
   },
 
   render: function () {
