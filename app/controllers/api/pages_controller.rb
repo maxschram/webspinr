@@ -1,4 +1,4 @@
-class PagesController < ApplicationController
+class Api::PagesController < ApplicationController
   def create
     @page = Page.new(page_params)
 
