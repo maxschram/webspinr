@@ -7,6 +7,7 @@ Webspinr.Views.EditPage = Backbone.CompositeView.extend({
   initialize: function () {
     this.listenTo(this.collection, "add", this.render);
     this.listenTo(this.collection, 'add', this.addElementView);
+    this.listenTo(this.collection, "remove", this.removeElementView);
     this.collection.each(this.addElementView.bind(this));
   },
 
@@ -14,6 +15,10 @@ Webspinr.Views.EditPage = Backbone.CompositeView.extend({
     var subview = new Webspinr.Views.EditElement({ model: element });
     this.addSubview("#elements", subview);
     subview.render();
+  },
+
+  removeElementView: function (element) {
+    this.removeModelSubview("#elements", element);
   },
 
   render: function () {

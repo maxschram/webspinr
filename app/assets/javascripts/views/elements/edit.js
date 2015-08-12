@@ -25,17 +25,19 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
   initialize: function () {
     this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.model, "change", this.saveElement);
-    this.addMenu();
+    // this.addMenu();
   },
 
   showPropertiesMenu: function (e) {
     e.preventDefault();
-    alert("change stuff");
+    this.addMenu();
   },
 
   addMenu: function () {
-    var subview = new Webspinr.Views.ElementPropertiesMenu();
-    this.addSubview(".element-properites-menu", subview);
+    var subview = new Webspinr.Views.ElementPropertiesMenu({
+      model: this.model
+    });
+    this.addSubview(".element-properties-menu", subview);
     subview.render();
   },
 
