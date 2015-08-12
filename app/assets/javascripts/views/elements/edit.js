@@ -21,8 +21,7 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
 
   render: function () {
     this.$el.html(this.template({ element: this.model }));
-    this.$el.css("top", this.model.get("top"));
-    this.$el.css("left", this.model.get("left"));
+    this.$el.attr("style", this.model.get("style"));
     this.delegateEvents();
     this.onRender();
     this.attachSubviews();
@@ -33,8 +32,6 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
     var view = this;
     this.$el.draggable({
       stop: function (e, ui) {
-        debugger
-        this.model.set({ top: ui.position.top});
       }.bind(this)
     });
   }

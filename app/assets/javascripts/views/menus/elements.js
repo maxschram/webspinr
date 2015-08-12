@@ -17,8 +17,7 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
       tag: "p",
       content: "Click here to enter your text...",
       page_id: this.currentPageView.model.id,
-      top: "50%",
-      left: "50%",
+      style: "top: 50%; left: 50%; position: absolute",
       classes: "text"
     });
     this.currentPageView.collection.add(element);
@@ -29,8 +28,7 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
       tag: "div",
       classes: "box",
       page_id: this.currentPageView.model.id,
-      top: "50%",
-      left: "50%"
+      style: "top: 50%; left: 50%; position: absolute"
     });
     this.currentPageView.collection.add(element);
   },
