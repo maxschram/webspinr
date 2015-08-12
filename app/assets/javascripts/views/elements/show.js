@@ -18,6 +18,7 @@ Webspinr.Views.Element = Backbone.CompositeView.extend({
   render: function () {
     this.$el.html(this.template({ element: this.model }));
     this.$el.attr("style", this.model.get("style"));
+    this.$el.attr("src", this.model.get("src"));
     this.delegateEvents();
     this.onRender();
     this.attachSubviews();
