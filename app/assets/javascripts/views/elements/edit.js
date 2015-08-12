@@ -10,7 +10,8 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
   events: {
     "dblclick": "editElement",
     "blur input": "saveText",
-    "submit form": "saveText"
+    "submit form": "saveText",
+    "contextmenu": "showPropertiesMenu"
   },
 
   className: function (){
@@ -24,6 +25,18 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
   initialize: function () {
     this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.model, "change", this.saveElement);
+    // this.addMenu();
+  },
+
+  showPropertiesMenu: function (e) {
+    e.preventDefault();
+    alert("change stuff");
+  },
+
+  addMenu: function () {
+    var subview = new Webspinr.Views.ElementPropertiesMenu();
+    this.addSubview(".element-properites-menu", subview);
+    subview.render();
   },
 
   saveText: function (e) {
@@ -77,7 +90,7 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
     this.$el.resizable({
       autoHide: true,
       stop: this.saveStyle.bind(this)
-    });      
+    });
     }
   }
 });
