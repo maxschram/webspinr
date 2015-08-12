@@ -141,7 +141,15 @@ table {
    height: 100px;
  }
 
-.editing .element:hover {
+#page.editing .element:hover {
   cursor: pointer;
   border: 2px dotted black;
+}
+
+.element.text.editing {
+  background: yellow;
+}
+
+.element.text .form {
+  background: red;
 }

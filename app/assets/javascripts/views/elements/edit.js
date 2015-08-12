@@ -1,8 +1,15 @@
 Webspinr.Views.EditElement = Backbone.CompositeView.extend({
-  template: JST["elements/edit"],
+  template: function (options) {
+    if (this.model.get("classes") === "text" && this._editing) {
+      return JST["elements/text_form"](options);
+    } else {
+      return JST["elements/edit"](options);
+    }
+  },
 
   events: {
-    "click": "editElement"
+    "click": "editElement",
+    "blur input": "saveText"
   },
 
   className: function (){
@@ -18,12 +25,27 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
     this.listenTo(this.model, "change", this.saveElement);
   },
 
-  saveElement: function () {
-    // alert saving
+  saveText: function (e) {
+    var view = this;
+    var data = $(e.currentTarget).serializeJSON();
+    view.model.save(data, {
+      success: function () {
+        view._editing = false;
+        view.render();
+      }
+    });
+  },
+
+  editText: function () {
+    alert("Edit text");
   },
 
   editElement: function () {
-    alert("Edit element");
+    if ( this.model.get("classes") === "text") {
+      this._editing = true;
+      this.render();
+      this.$("input").focus();
+    }
   },
 
   render: function () {
