@@ -66,16 +66,18 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
 
   onRender: function () {
     var view = this;
-    this.$el.resizable();
-    this.$el.resizable("destroy");
-    this.$el.resizable({
-      autoHide: true,
-      stop: this.saveStyle.bind(this)
-    });
 
     this.$el.draggable({
       stop: this.saveStyle.bind(this)
     });
 
+    if (this.model.get("tag") !== "img") {
+    this.$el.resizable();
+    this.$el.resizable("destroy");
+    this.$el.resizable({
+      autoHide: true,
+      stop: this.saveStyle.bind(this)
+    });      
+    }
   }
 });

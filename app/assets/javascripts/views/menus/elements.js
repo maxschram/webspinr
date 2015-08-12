@@ -10,7 +10,7 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
     "click .text": "createText",
     "click .list": "createList",
     "click .box": "createBox",
-    "click .image": "createImage"
+    "click .image": "showImageMenu"
   },
 
   createText: function () {
@@ -24,8 +24,27 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
     this.currentPageView.collection.add(element);
   },
 
-  createImage: function () {
-    alert("new image");
+  saveElement: function (element) {
+    element.save({}, {
+      success: function () {
+        this.currentPageView.collection.add(element);
+      }
+    });
+  },
+
+  showImageMenu: function () {
+    this.createImage("https://myimaginationcastle.files.wordpress.com/2013/10/ahh-not-the-bees.jpg");
+  },
+
+  createImage: function (src) {
+    var element = new Webspinr.Models.Element({
+      tag: "img",
+      page_id: this.currentPageView.model.id,
+      style: "top: 50%; left: 50%; position: absolute",
+      src: src
+    });
+    this.currentPageView.collection.add(element);
+    // this.saveElement();
   },
 
   createBox: function () {
