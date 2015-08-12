@@ -21,7 +21,12 @@ Webspinr.Views.EditSite = Backbone.CompositeView.extend({
     var pages = this.model.pages();
     var view = this;
     var title = prompt("Enter a title for the new page");
-    var newPage = new Webspinr.Models.Page({ title: title });
+
+    var newPage = new Webspinr.Models.Page({
+      title: title,
+      site_id: this.model.id
+    });
+
     newPage.save({}, {
       success: function () {
         pages.add(newPage);
