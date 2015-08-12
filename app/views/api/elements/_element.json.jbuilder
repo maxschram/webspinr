@@ -1,1 +1,3 @@
-json.(element, :id, :tag, :content, :attributes)
+json.(element, :id, :tag, :content)
+
+json.attrs JSON.parse(element.attrs)
