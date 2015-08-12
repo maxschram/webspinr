@@ -33,7 +33,8 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
   },
 
   showImageMenu: function () {
-    this.createImage("https://myimaginationcastle.files.wordpress.com/2013/10/ahh-not-the-bees.jpg");
+    var imageUrl = prompt("Enter the image url");
+    this.createImage(imageUrl);
   },
 
   createImage: function (src) {
