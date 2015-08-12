@@ -8,9 +8,10 @@ Webspinr.Views.EditSite = Backbone.CompositeView.extend({
   },
 
 
-  initialize: function () {
+  initialize: function (options) {
     this.listenTo(this.model, "sync", this.addPageView);
     this.listenTo(this.model, "sync", this.render);
+    this.pageId = options.pageId || 0;
     this.addElementsMenu();
     this.addPagesMenu();
   },
@@ -34,7 +35,7 @@ Webspinr.Views.EditSite = Backbone.CompositeView.extend({
   },
 
   addPageView: function () {
-    var page = this.model.pages().models[0];
+    var page = this.model.pages().at(this.pageId);
     var subview = new Webspinr.Views.EditPage({
       model: page,
       collection: page.elements()
