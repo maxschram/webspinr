@@ -10,7 +10,9 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
     "click .text": "createText",
     "click .list": "createList",
     "click .box": "createBox",
-    "click .image": "showImageMenu"
+    "click .image": "showImageMenu",
+    // "click .internal-link": "createInternalLink",
+    "click .external-link": "createExternalLink"
   },
 
   createText: function () {
@@ -20,6 +22,31 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
       page_id: this.currentPageView.model.id,
       style: "top: 50%; left: 50%; position: absolute",
       classes: "text"
+    });
+    this.currentPageView.collection.add(element);
+  },
+
+  createInternalLink: function () {
+    var url = prompt("which page");
+    var element = new Webspinr.Models.Element({
+      tag: "a",
+      content: "Link description",
+      page_id: this.currentPageView.model.id,
+      style: "top: 50%; left: 50%; position: absolute",
+      classes: "link"
+    });
+    this.currentPageView.collection.add(element);
+  },
+
+  createExternalLink: function () {
+    var url = prompt("Enter a url to link to");
+    var element = new Webspinr.Models.Element({
+      tag: "a",
+
+      content: "Link description",
+      page_id: this.currentPageView.model.id,
+      style: "top: 50%; left: 50%; position: absolute",
+      classes: "link"
     });
     this.currentPageView.collection.add(element);
   },
