@@ -4,7 +4,8 @@ Webspinr.Views.EditSite = Backbone.CompositeView.extend({
   events: {
     "click .live": "viewLive",
     "mouseenter .menu-button": "toggleMenu",
-    "mouseleave .menu-bar": "toggleMenu"
+    "mouseleave .menu-bar": "toggleMenu",
+    "click .new-page": "addPage"
   },
 
 
@@ -14,6 +15,19 @@ Webspinr.Views.EditSite = Backbone.CompositeView.extend({
     this.pageId = options.pageId;
     this.addElementsMenu();
     this.addPagesMenu();
+  },
+
+  addPage: function () {
+    var pages = this.model.pages();
+    var view = this;
+    var title = prompt("Enter a title for the new page");
+    var newPage = new Webspinr.Models.Page({ title: title });
+    newPage.save({}, {
+      success: function () {
+        pages.add(newPage);
+        view.render();
+      }
+    });
   },
 
   toggleMenu: function () {
