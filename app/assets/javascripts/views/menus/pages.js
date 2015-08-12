@@ -13,7 +13,10 @@ Webspinr.Views.PagesMenu = Backbone.CompositeView.extend({
   },
 
   addPageMenuItemView: function (page) {
-    var subview = new Webspinr.Views.PageMenuItem({ model: page });
+    var subview = new Webspinr.Views.PageMenuItem({
+      model: page,
+      site: this.model
+    });
     this.addSubview(".pages", subview);
     subview.render();
   },

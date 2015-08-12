@@ -11,7 +11,7 @@ Webspinr.Views.EditSite = Backbone.CompositeView.extend({
   initialize: function (options) {
     this.listenTo(this.model, "sync", this.addPageView);
     this.listenTo(this.model, "sync", this.render);
-    this.pageId = options.pageId || 0;
+    this.pageId = options.pageId;
     this.addElementsMenu();
     this.addPagesMenu();
   },
@@ -20,9 +20,18 @@ Webspinr.Views.EditSite = Backbone.CompositeView.extend({
     this.$(".menu-bar").toggleClass("show");
   },
 
+  currentPage : function () {
+    if (this.pageId) {
+      return this.model.pages().get(this.pageId);
+    } else {
+      return this.model.pages().at(0);
+    }
+  },
+
   addPagesMenu: function () {
     var subview = this._pagesMenuView = new Webspinr.Views.PagesMenu({
-      collection: this.model.pages()
+      collection: this.model.pages(),
+      model: this.model
     });
     this.addSubview(".menu-bar", subview);
     subview.render();
@@ -35,7 +44,7 @@ Webspinr.Views.EditSite = Backbone.CompositeView.extend({
   },
 
   addPageView: function () {
-    var page = this.model.pages().at(this.pageId);
+    var page = this.currentPage();
     var subview = new Webspinr.Views.EditPage({
       model: page,
       collection: page.elements()
