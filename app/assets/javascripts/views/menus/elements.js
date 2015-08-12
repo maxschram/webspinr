@@ -9,7 +9,8 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
   events: {
     "click .text": "createText",
     "click .list": "createList",
-    "click .box": "createBox"
+    "click .box": "createBox",
+    "click .image": "createImage"
   },
 
   createText: function () {
@@ -21,6 +22,10 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
       classes: "text"
     });
     this.currentPageView.collection.add(element);
+  },
+
+  createImage: function () {
+    alert("new image");
   },
 
   createBox: function () {
