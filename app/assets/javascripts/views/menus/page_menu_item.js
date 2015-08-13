@@ -12,7 +12,7 @@ Webspinr.Views.PageMenuItem = Backbone.View.extend({
 
   switchPage: function () {
     Backbone.history.navigate(
-      "#/sites/"+ this.site.id + "/edit/" + this.model.id,
+      "#/editor/"+ this.site.id + "/" + this.model.id,
       { trigger: true }
     );
   },
