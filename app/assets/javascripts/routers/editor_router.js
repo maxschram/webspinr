@@ -11,6 +11,13 @@ Webspinr.Routers.EditorRouter = Backbone.Router.extend({
     this.$rootEl = options.$rootEl;
   },
 
+  siteIndex: function () {
+    var sites = new Webspinr.Collections.Sites();
+    sites.fetch();
+    var view = new Webspinr.Views.SitesIndex({ collection: sites });
+    this._swapView(view);
+  },
+
   editSitePage: function (id, pageName) {
     var site = new Webspinr.Models.Site({ id: id });
     site.fetch();
