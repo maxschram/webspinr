@@ -11,7 +11,7 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
     "click .list": "createList",
     "click .box": "createBox",
     "click .image": "showImageMenu",
-    // "click .internal-link": "createInternalLink",
+    "click .internal-link": "createInternalLink",
     "click .external-link": "createExternalLink"
   },
 
@@ -35,15 +35,25 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
   },
 
   createInternalLink: function () {
-    var url = prompt("which page");
+    var pageName = prompt("Enter the name of the page to link to");
+    var url = "#/sites/" + this.model.id + '/' + pageName;
     var element = new Webspinr.Models.Element({
       tag: "a",
+      attrs: {
+        style: {
+          top: "50%",
+          left: "50%",
+          position: "absolute"
+        },
+        class: [
+          "link text"
+        ],
+        href: url
+      },
       content: "Link description",
-      page_id: this.currentPageView.model.id,
-      style: "top: 50%; left: 50%; position: absolute",
-      classes: "link"
+      page_id: this.currentPageView.model.id
     });
-    this.currentPageView.collection.add(element);
+    this.saveElement(element);
   },
 
   createExternalLink: function () {
