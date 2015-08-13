@@ -7,6 +7,6 @@ class Site < ActiveRecord::Base
   private
 
   def ensure_page
-    pages.create(title: "New Page")
+    pages.create(title: "index")
   end
 end
