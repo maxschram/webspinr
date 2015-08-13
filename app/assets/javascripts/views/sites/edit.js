@@ -13,7 +13,7 @@ Webspinr.Views.EditSite = Backbone.CompositeView.extend({
   initialize: function (options) {
     this.listenTo(this.model, "sync", this.addPageView);
     this.listenTo(this.model, "sync", this.render);
-    this.pageId = options.pageId;
+    this.pageName = options.pageName;
     this.addElementsMenu();
     this.addPagesMenu();
   },
@@ -43,8 +43,8 @@ Webspinr.Views.EditSite = Backbone.CompositeView.extend({
   },
 
   currentPage : function () {
-    if (this.pageId) {
-      return this.model.pages().get(this.pageId);
+    if (this.pageName) {
+      return this.model.pages().findWhere({ title: this.pageName });
     } else {
       return this.model.pages().at(0);
     }
@@ -81,7 +81,7 @@ Webspinr.Views.EditSite = Backbone.CompositeView.extend({
 
   viewLive: function () {
     //TODO: change site title to address
-    window.open("/sites/"+ this.model.get("title") + "/" + this.currentPage().get("title"));
+    window.open("/sites/"+ this.model.id + "/" + this.currentPage().get("title"));
   },
 
   render: function () {

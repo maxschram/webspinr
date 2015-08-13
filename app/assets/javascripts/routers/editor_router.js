@@ -3,17 +3,17 @@ Webspinr.Routers.EditorRouter = Backbone.Router.extend({
   routes: {
     '': 'newSite',
     ':id': 'editSite',
-    ':id/:pageId': 'editSitePage'
+    ':id/:pageName': 'editSitePage'
   },
 
   initialize: function (options) {
     this.$rootEl = options.$rootEl;
   },
 
-  editSitePage: function (id, pageId) {
+  editSitePage: function (id, pageName) {
     var site = new Webspinr.Models.Site({ id: id });
     site.fetch();
-    var view = new Webspinr.Views.EditSite({ model: site, pageId: pageId });
+    var view = new Webspinr.Views.EditSite({ model: site, pageName: pageName });
     this._swapView(view);
   },
 
