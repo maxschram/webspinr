@@ -32,14 +32,6 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
     this.addMenu();
   },
 
-  setColor: function () {
-    if (this.model.get("tag") === "div") {
-      this.$el.css("background-color", this.model.get("color"));
-    } else {
-      this.$el.css("color", this.model.get("color"));
-    }
-  },
-
   removePropertiesMenu: function () {
     if (this._propertiesMenuView) {
       this.removeSubview(".element-properties-menu", this._propertiesMenuView);
@@ -82,31 +74,53 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
     }
   },
 
+  setAttrs: function () {
+    var attrs = this.model.get("attrs");
+    for (var attr in attrs) {
+      if (attr === "style") {
+        this.setStyle(attrs[attr]);
+      }
+    }
+  },
+
+  setStyle: function (style) {
+    for(var prop in style) {
+      this.$el.css(prop, style[prop]);
+    }
+  },
+
   render: function () {
-    debugger
+    this.setAttrs();
     this.$el.html(this.template({ element: this.model }));
-    this.$el.attr("style", this.model.get("style"));
-    this.$el.attr("src", this.model.get("src"));
+    // this.$el.attr("style", this.model.get("style"));
+    // this.$el.attr("src", this.model.get("src"));
     this.onRender();
     this.attachSubviews();
     this.delegateEvents();
     return this;
   },
 
-  saveStyle: function () {
-    this.model.save({ style: this.$el.attr("style")});
+  updatePosition: function () {
+    var width = this.$el.css("width");
+    var height = this.$el.css("height");
+    this.model.get("attrs").style.width = width;
+    this.model.get("attrs").style.height = height;
+    this.model.save();
   },
 
-  saveElement: function () {
+  updateSize: function () {
+    var left = this.$el.css("left");
+    var top = this.$el.css("top");
+    this.model.get("attrs").style.left = left;
+    this.model.get("attrs").style.top = top;
     this.model.save();
   },
 
   onRender: function () {
     var view = this;
-    this.setColor();
 
     this.$el.draggable({
-      stop: this.saveStyle.bind(this)
+      stop: this.updateSize.bind(this)
     });
 
     if (this.model.get("tag") !== "img") {
@@ -114,7 +128,7 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
       this.$el.resizable("destroy");
       this.$el.resizable({
         autoHide: true,
-        stop: this.saveStyle.bind(this)
+        stop: this.updatePosition.bind(this)
       });
     }
     // Backbone.CompositeView.prototype.onRender.call(this);

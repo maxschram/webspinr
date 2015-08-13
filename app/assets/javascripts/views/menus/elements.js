@@ -85,16 +85,18 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
           left: "50%",
           position: "absolute",
           width: "50px",
-          height: "50px"
+          height: "50px",
+          background: "darksalmon"
         }
       }
     });
-    element.save({}, {
-      success: function () {
-        alert("it saved");
-      }
-    });
     this.currentPageView.collection.add(element);
+    
+    element.save({}, {
+      error: function () {
+        this.currentPageView.collection.remove(element)
+      }.bind(this)
+    });
   },
 
   createList: function () {
