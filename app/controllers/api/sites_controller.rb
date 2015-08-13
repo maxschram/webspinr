@@ -1,5 +1,6 @@
 class Api::SitesController < ApplicationController
   before_action :require_login, except: :show
+  before_action :require_owner, except: [:index, :show]
 
   def index
     @sites = current_user.sites
@@ -38,6 +39,13 @@ class Api::SitesController < ApplicationController
   end
 
   private
+
+  def require_owner
+    site = Site.find(params[:id])
+    unless site.user == current_user
+      render "User cannot edit a site they don't own", status: :unauthorized
+    end
+  end
 
   def site_params
     params.require(:site).permit(:title, :description)
