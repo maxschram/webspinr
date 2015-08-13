@@ -18,6 +18,7 @@ Webspinr.Views.ElementPropertiesMenu = Backbone.CompositeView.extend({
     } else {
       this.model.get("attrs").style.color = color;
     }
+    this.model.save();
     this.model.trigger("sync");
   },
 

@@ -2,7 +2,7 @@ Webspinr.Views.Element = Backbone.CompositeView.extend({
   template: JST["elements/element"],
 
   className: function (){
-    return "element " + this.model.get("classes");
+    return "element " + this.model.get("attrs").class.join(" ");
   },
 
   tagName: function () {
@@ -15,18 +15,29 @@ Webspinr.Views.Element = Backbone.CompositeView.extend({
     this.render();
   },
 
-  setColor: function () {
-    if (this.model.get("tag") === "div") {
-      this.$el.css("background-color", this.model.get("color"));
-    } else {
-      this.$el.css("color", this.model.get("color"));
+  setAttrs: function () {
+    var attrs = this.model.get("attrs");
+    for (var attr in attrs) {
+      if (attr === "style") {
+        this.setStyle(attrs[attr]);
+      } else if (attr === 'class') {
+        attrs[attr].forEach(function (klass) {
+          this.$el.addClass(klass);
+        }.bind(this));
+      } else {
+        this.$el.attr(attr, attrs[attr]);
+      }
+    }
+  },
+
+  setStyle: function (style) {
+    for(var prop in style) {
+      this.$el.css(prop, style[prop]);
     }
   },
 
   render: function () {
     this.$el.html(this.template({ element: this.model }));
-    this.$el.attr("style", this.model.get("style"));
-    this.$el.attr("src", this.model.get("src"));
     this.delegateEvents();
     this.onRender();
     this.attachSubviews();
@@ -34,6 +45,6 @@ Webspinr.Views.Element = Backbone.CompositeView.extend({
   },
 
   onRender: function () {
-    this.setColor();
+    this.setAttrs();
   }
 });
