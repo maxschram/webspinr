@@ -137,7 +137,7 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
   },
 
   render: function () {
-    this.$el.html(this.template());
+    this.$el.html(this.template({ element: this.model }));
     this.delegateEvents();
     return this;
   }
