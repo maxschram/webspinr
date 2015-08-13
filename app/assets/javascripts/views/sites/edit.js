@@ -27,10 +27,12 @@ Webspinr.Views.EditSite = Backbone.CompositeView.extend({
       site_id: this.model.id
     });
 
+
     newPage.save({}, {
       success: function () {
         pages.add(newPage);
         view.render();
+        Backbone.history.navigate("#/editor/" + this.model.id + "/" + newPage.id);
       }
     });
   },
