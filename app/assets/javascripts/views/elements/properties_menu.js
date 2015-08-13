@@ -4,7 +4,8 @@ Webspinr.Views.ElementPropertiesMenu = Backbone.CompositeView.extend({
 
   events: {
     "click .delete": "deleteElement",
-    "click .color": "changeColor"
+    "click .color": "changeColor",
+    "click .style": "changeStyle"
   },
 
   deleteElement: function () {
@@ -18,6 +19,14 @@ Webspinr.Views.ElementPropertiesMenu = Backbone.CompositeView.extend({
     } else {
       this.model.get("attrs").style.color = color;
     }
+    this.model.save();
+    this.model.trigger("sync");
+  },
+
+  changeStyle: function (e) {
+    var style = $(e.currentTarget).data("style");
+    var borderRadius = style * 15 + "px";
+    this.model.get("attrs").style["border-radius"] = borderRadius;
     this.model.save();
     this.model.trigger("sync");
   },
