@@ -19,7 +19,9 @@ Webspinr.Views.Site = Backbone.CompositeView.extend({
     } else {
       page = this.model.pages().findWhere({ title: this.pageName });
       // page = this.model.pages().get(this.pageId);
-      if (!page) { alert("page not found");}
+      if (!page) {
+        alert("page not found");
+      }
     }
 
     var subview = new Webspinr.Views.Page({
