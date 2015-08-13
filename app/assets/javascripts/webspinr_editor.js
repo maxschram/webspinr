@@ -4,7 +4,7 @@ window.Webspinr = {
   Views: {},
   Routers: {},
   initialize: function () {
-    new Webspinr.Routers.AppRouter({
+    new Webspinr.Routers.EditorRouter({
       $rootEl: $("#root")
     });
     Backbone.history.start();

@@ -1,0 +1,14 @@
+//= require jquery
+//= require jquery_ujs
+//= require jquery-ui/draggable
+//= require jquery-ui/resizable
+//= require jquery_serializejson
+//= require underscore
+//= require backbone
+//= require_tree ./utils
+//= require webspinr_editor
+//= require_tree ../templates
+//= require_tree ./models
+//= require_tree ./collections
+//= require_tree ./views
+//= require_tree ./routers
