@@ -80,7 +80,8 @@ Webspinr.Views.EditSite = Backbone.CompositeView.extend({
   },
 
   viewLive: function () {
-    window.open("#/sites/"+ this.model.id + "/" + this.currentPage().get("title"));
+    //TODO: change site title to address
+    window.open("/sites/"+ this.model.get("title") + "/" + this.currentPage().get("title"));
   },
 
   render: function () {
