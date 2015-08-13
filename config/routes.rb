@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   end
 
   get 'editor', to: 'editor#load'
+  get 'sites', to: 'sites#show'
 end

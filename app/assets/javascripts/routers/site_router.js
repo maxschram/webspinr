@@ -1,11 +1,8 @@
-Webspinr.Routers.AppRouter = Backbone.Router.extend({
+Webspinr.Routers.SiteRouter = Backbone.Router.extend({
 
   routes: {
-    '': 'newSite',
-    'editor/:id': 'editSite',
-    'editor/:id/:pageId': 'editSitePage',
-    'sites/:id': 'showSiteIndex',
-    'sites/:id/:pageName': 'showSitePage'
+    ':id': 'showSiteIndex',
+    ':id/:pageName': 'showSitePage'
   },
 
   initialize: function (options) {

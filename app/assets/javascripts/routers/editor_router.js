@@ -1,4 +1,4 @@
-Webspinr.Routers.AppRouter = Backbone.Router.extend({
+Webspinr.Routers.EditorRouter = Backbone.Router.extend({
 
   routes: {
     '': 'newSite',
