@@ -65,12 +65,17 @@ table {
 	border-spacing: 0;
 }
 
+html, body, #root, .site, #page-container, .page, #elements {
+	height: 100%;
+}
+
 #root {
+	height: 100%;
   display: absolute;
 }
 
  #elements {
-   height: 800px;
+	 height: 100%;
    background: green;
  }
 
@@ -170,7 +175,7 @@ table {
 	 font-size: 36px;
  }
 
- #page.editing {
+ #page-container.editing {
    border: 2px solid black;
    margin-top: 30px;
  }
@@ -181,7 +186,7 @@ table {
    height: 100px;
  }
 
-#page.editing .element:hover {
+#page-container.editing .element:hover {
   cursor: pointer;
   border: 2px dotted black;
 	z-index: 2;

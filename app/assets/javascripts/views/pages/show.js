@@ -1,5 +1,6 @@
 Webspinr.Views.Page = Backbone.CompositeView.extend({
   template: JST["pages/page"],
+  className: 'page',
 
   initialize: function () {
     this.listenTo(this.collection, 'add', this.addElementView);

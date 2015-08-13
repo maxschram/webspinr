@@ -1,5 +1,6 @@
 Webspinr.Views.EditPage = Backbone.CompositeView.extend({
   template: JST["pages/edit"],
+  className: 'page',
 
   events: {
   },

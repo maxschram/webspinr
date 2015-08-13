@@ -1,6 +1,7 @@
 Webspinr.Views.Site = Backbone.CompositeView.extend({
   model: Webspinr.Models.Site,
   template: JST["sites/site"],
+  className: 'site',
   events: {
 
   },
@@ -25,7 +26,7 @@ Webspinr.Views.Site = Backbone.CompositeView.extend({
       model: page,
       collection: page.elements()
     });
-    this.addSubview("#page", subview);
+    this.addSubview("#page-container", subview);
   },
 
   render: function () {

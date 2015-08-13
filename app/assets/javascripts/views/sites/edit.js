@@ -1,6 +1,7 @@
 Webspinr.Views.EditSite = Backbone.CompositeView.extend({
   model: Webspinr.Models.Site,
   template: JST["sites/edit"],
+  className: 'site',
   events: {
     "click .live": "viewLive",
     "mouseenter .menu-button": "toggleMenu",
@@ -74,7 +75,7 @@ Webspinr.Views.EditSite = Backbone.CompositeView.extend({
       collection: page.elements()
     });
     this._elementsMenuView.currentPageView = subview;
-    this.addSubview("#page", subview);
+    this.addSubview("#page-container", subview);
     subview.render();
   },
 
