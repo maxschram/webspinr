@@ -45,10 +45,11 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
           position: "absolute",
           background: "black",
           width: "1000px",
-          height: "2px"
+          height: "5px"
         },
         class: [
-          "box"
+          "box",
+          "line"
         ]
       },
       page_id: this.currentPageView.model.id

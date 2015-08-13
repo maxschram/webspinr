@@ -223,6 +223,7 @@ html, body, #root, .site, #page-container, .page, #elements {
 	box-shadow: 1px 1px black;
 	border-radius: 5px;
 	overflow: hidden;
+	color: black;
 }
 
 .element-properties-menu .menu button {
@@ -248,6 +249,11 @@ html, body, #root, .site, #page-container, .page, #elements {
 	z-index: 0;
 }
 
+
 .element:not(.box) {
 	z-index: 1;
+}
+
+.line {
+	z-index: 3;
 }
