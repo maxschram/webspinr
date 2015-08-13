@@ -68,8 +68,14 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
     var element = new Webspinr.Models.Element({
       tag: "img",
       page_id: this.currentPageView.model.id,
-      style: "top: 50%; left: 50%; position: absolute",
-      src: src
+      attrs: {
+        style: {
+          top: "50%",
+          left: "50%",
+          position: "absolute"
+        },
+        src: src
+      }
     });
     this.currentPageView.collection.add(element);
     // this.saveElement();
@@ -91,7 +97,7 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
       }
     });
     this.currentPageView.collection.add(element);
-    
+
     element.save({}, {
       error: function () {
         this.currentPageView.collection.remove(element)

@@ -79,6 +79,8 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
     for (var attr in attrs) {
       if (attr === "style") {
         this.setStyle(attrs[attr]);
+      } else {
+        this.$el.attr(attr, attrs[attr]);
       }
     }
   },
