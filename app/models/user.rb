@@ -9,6 +9,10 @@ class User < ActiveRecord::Base
     return nil unless user && user.has_password?(password)
   end
 
+  def has_password?(password)
+    BCrypt::Password.new(self.password_digest).is_password?(password)
+  end
+
   def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)

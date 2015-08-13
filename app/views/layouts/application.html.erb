@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<%= flash[:errrors].join("<br>").html_safe if flash[:errors] %>
 <%= yield %>
 
 </body>
