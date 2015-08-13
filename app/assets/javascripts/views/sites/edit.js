@@ -6,7 +6,8 @@ Webspinr.Views.EditSite = Backbone.CompositeView.extend({
     "click .live": "viewLive",
     "mouseenter .menu-button": "toggleMenu",
     "mouseleave .menu-bar": "toggleMenu",
-    "click .new-page": "addPage"
+    "click .new-page": "addPage",
+    "click .index": "viewIndex"
   },
 
 
@@ -16,6 +17,10 @@ Webspinr.Views.EditSite = Backbone.CompositeView.extend({
     this.pageName = options.pageName;
     this.addElementsMenu();
     this.addPagesMenu();
+  },
+
+  viewIndex: function () {
+    Backbone.history.navigate("", { trigger: true });
   },
 
   addPage: function () {
