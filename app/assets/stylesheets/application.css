@@ -225,7 +225,20 @@ html, body, #root, .site, #page-container, .page, #elements {
 }
 
 .element-properties-menu .menu button {
+	font-size: 18px;
 	background: gray;
 	width: 100%;
-	outline: none;
+	height: 40px;
+	outline: 0;
+	border: 0;
+	border-bottom: 1px solid black;
+	cursor: pointer;
+}
+
+.element-properties-menu .menu .style {
+	width: 30%;
+	margin: 0;
+	padding: 0;
+	border: 1px solid black;
+	box-sizing: border-box;
 }

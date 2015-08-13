@@ -13,6 +13,7 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
     "blur input": "saveText",
     "submit form": "saveText",
     "contextmenu": "showPropertiesMenu",
+    "mouseleave .menu": "removePropertiesMenu",
     "mouseleave": "removePropertiesMenu"
   },
 
