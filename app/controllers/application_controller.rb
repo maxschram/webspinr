@@ -17,4 +17,9 @@ class ApplicationController < ActionController::Base
   def logged_in?
     !!current_user
   end
+
+  def require_login
+    flash[:errors] = ["You must login first"]
+    redirect_to :root
+  end
 end
