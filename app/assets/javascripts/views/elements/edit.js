@@ -1,6 +1,6 @@
 Webspinr.Views.EditElement = Backbone.CompositeView.extend({
   template: function (options) {
-    if (this.model.get("classes") === "text" && this._editing) {
+    if (this.$el.hasClass("text") && this._editing) {
       return JST["elements/text_form"](options);
     } else {
       return JST["elements/edit"](options);
@@ -67,7 +67,7 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
   },
 
   editElement: function () {
-    if ( this.model.get("classes") === "text") {
+    if (this.$el.hasClass("text")) {
       this._editing = true;
       this.render();
       this.$("input").focus();
@@ -79,6 +79,10 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
     for (var attr in attrs) {
       if (attr === "style") {
         this.setStyle(attrs[attr]);
+      } else if (attr === 'class') {
+        attrs[attr].forEach(function (klass) {
+          this.$el.addClass(klass);
+        }.bind(this));
       } else {
         this.$el.attr(attr, attrs[attr]);
       }
@@ -92,8 +96,8 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    this.setAttrs();
     this.$el.html(this.template({ element: this.model }));
+    this.setAttrs();
     // this.$el.attr("style", this.model.get("style"));
     // this.$el.attr("src", this.model.get("src"));
     this.onRender();
