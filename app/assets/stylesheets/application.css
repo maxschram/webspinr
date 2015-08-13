@@ -188,7 +188,8 @@ html, body, #root, .site, #page-container, .page, #elements {
 
 #page-container.editing .element:hover {
   cursor: pointer;
-  border: 2px dotted black;
+  /*border: 2px dotted black;*/
+	outline: 2px dotted black;
 	z-index: 2;
 }
 

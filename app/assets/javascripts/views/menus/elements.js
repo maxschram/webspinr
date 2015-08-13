@@ -11,6 +11,7 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
     "click .list": "createList",
     "click .box": "createBox",
     "click .image": "showImageMenu",
+    "click .line": "createLine",
     "click .internal-link": "createInternalLink",
     "click .external-link": "createExternalLink"
   },
@@ -32,6 +33,27 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
       }
     });
     this.currentPageView.collection.add(element);
+  },
+
+  createLine: function () {
+    var element = new Webspinr.Models.Element({
+      tag: "div",
+      attrs: {
+        style: {
+          top: "50%",
+          left: "50%",
+          position: "absolute",
+          background: "black",
+          width: "1000px",
+          height: "2px"
+        },
+        class: [
+          "box"
+        ]
+      },
+      page_id: this.currentPageView.model.id
+    });
+    this.saveElement(element);
   },
 
   createInternalLink: function () {
