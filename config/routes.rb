@@ -12,4 +12,6 @@ Rails.application.routes.draw do
               only: [:update, :create, :destroy],
               defaults: { format: 'json'}
   end
+
+  get 'editor', to: 'editor#load'
 end
