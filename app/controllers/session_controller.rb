@@ -4,12 +4,12 @@ class SessionController < ApplicationController
   end
 
   def create
-    user = User.find_by_credentials(
+    @user = User.find_by_credentials(
       params[:user][:email],
       params[:user][:password]
     )
-    if user
-      login_user(user)
+    if @user
+      login_user(@user)
       redirect_to :root
     else
       flash.now[:errors] = ["Invalid username/password"]
@@ -18,8 +18,8 @@ class SessionController < ApplicationController
   end
 
   def destroy
+    current_user.reset_session_token!
     session[:session_token] = nil
-    user.reset_session_token!
     redirect_to :root
   end
 end
