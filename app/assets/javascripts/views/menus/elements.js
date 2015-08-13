@@ -120,7 +120,10 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
           width: "50px",
           height: "50px",
           background: "darksalmon"
-        }
+        },
+        class: [
+          "box"
+        ]
       }
     });
     this.currentPageView.collection.add(element);

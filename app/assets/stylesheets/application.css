@@ -214,7 +214,7 @@ html, body, #root, .site, #page-container, .page, #elements {
 }
 
 .element-properties-menu .menu{
-	position: relative;
+	position: absolute;
 	left: -120px;
 	background: gray;
 	width: 120px;
@@ -241,4 +241,8 @@ html, body, #root, .site, #page-container, .page, #elements {
 	padding: 0;
 	border: 1px solid black;
 	box-sizing: border-box;
+}
+
+.box {
+	z-index: 0;
 }
