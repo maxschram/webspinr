@@ -1,5 +1,5 @@
 Webspinr.Models.Site = Backbone.Model.extend({
-  urlRoot: 'api/sites',
+  urlRoot: '/api/sites',
 
   pages: function () {
     if (!this._pages) {

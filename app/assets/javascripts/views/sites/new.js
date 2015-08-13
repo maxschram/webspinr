@@ -21,7 +21,7 @@ Webspinr.Views.NewSite = Backbone.CompositeView.extend({
     site.save({}, {
       success: function () {
         Backbone.history.navigate(
-          ("#/sites/" + site.id + "/edit"),
+          ("#/editor/" + site.id),
           { trigger: true }
         );
       }
