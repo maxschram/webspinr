@@ -50,20 +50,29 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
     var url = prompt("Enter a url to link to");
     var element = new Webspinr.Models.Element({
       tag: "a",
-
+      attrs: {
+        style: {
+          top: "50%",
+          left: "50%",
+          position: "absolute"
+        },
+        class: [
+          "link"
+        ],
+        href: url
+      },
       content: "Link description",
-      page_id: this.currentPageView.model.id,
-      style: "top: 50%; left: 50%; position: absolute",
-      classes: "link"
+      page_id: this.currentPageView.model.id
     });
-    this.currentPageView.collection.add(element);
+    this.saveElement(element);
   },
 
   saveElement: function (element) {
+    this.currentPageView.collection.add(element);
     element.save({}, {
-      success: function () {
-        this.currentPageView.collection.add(element);
-      }
+      error: function () {
+        this.currentPageView.collection.remove(element);
+      }.bind(this)
     });
   },
 
