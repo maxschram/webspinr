@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token
   attr_reader :password
 
+  has_many :sites
+
   def self.find_by_credentials(email, password)
     user = User.find_by({ email: email })
     user && user.has_password?(password) ? user : password
