@@ -15,6 +15,12 @@ Rails.application.routes.draw do
 
   get 'editor', to: 'editor#load'
   get 'sites', to: 'sites#show'
+
   get 'signup', to: 'users#new', as: 'signup'
   post 'signup', to: 'users#create'
+
+  get 'login', to: 'session#new', as: 'login'
+  post 'login', to: 'session#create'
+  delete 'logout', to: 'session#destroy', as: 'logout'
+
 end
