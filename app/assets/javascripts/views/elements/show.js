@@ -2,7 +2,10 @@ Webspinr.Views.Element = Backbone.CompositeView.extend({
   template: JST["elements/element"],
 
   className: function (){
-    return "element " + this.model.get("attrs").class.join(" ");
+    if (this.model.get("attrs").class) {
+      var classes = this.model.get("attrs").class.join(" ");
+    }
+    return "element " + classes;
   },
 
   tagName: function () {
