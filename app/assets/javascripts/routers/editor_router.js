@@ -1,7 +1,8 @@
 Webspinr.Routers.EditorRouter = Backbone.Router.extend({
 
   routes: {
-    '': 'newSite',
+    '': 'siteIndex',
+    'new': 'newSite',
     ':id': 'editSite',
     ':id/:pageName': 'editSitePage'
   },
