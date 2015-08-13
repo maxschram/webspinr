@@ -77,7 +77,7 @@ Webspinr.Views.EditSite = Backbone.CompositeView.extend({
   },
 
   viewLive: function () {
-    window.open("#/sites/"+ this.model.id);
+    window.open("#/sites/"+ this.model.id + "/" + this.currentPage().get("title"));
   },
 
   render: function () {
