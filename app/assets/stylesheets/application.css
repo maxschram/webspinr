@@ -246,3 +246,7 @@ html, body, #root, .site, #page-container, .page, #elements {
 .box {
 	z-index: 0;
 }
+
+.element:not(.box) {
+	z-index: 1;
+}
