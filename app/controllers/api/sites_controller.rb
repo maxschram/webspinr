@@ -1,4 +1,6 @@
 class Api::SitesController < ApplicationController
+  before_action :require_login, except: :index
+
   def show
     @site = Site.find(params[:id])
     render 'show'
