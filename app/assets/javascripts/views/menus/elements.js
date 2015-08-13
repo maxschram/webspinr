@@ -57,7 +57,7 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
           position: "absolute"
         },
         class: [
-          "link"
+          "link text"
         ],
         href: url
       },
