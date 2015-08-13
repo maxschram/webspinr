@@ -9,6 +9,7 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
 
   events: {
     "dblclick": "editElement",
+    "click": "clickElement",
     "blur input": "saveText",
     "submit form": "saveText",
     "contextmenu": "showPropertiesMenu",
@@ -50,6 +51,10 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
     }
   },
 
+  clickElement: function (e) {
+    e.preventDefault();
+  },
+
   saveText: function (e) {
     e.preventDefault();
     var view = this;
@@ -66,7 +71,8 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
     alert("Edit text");
   },
 
-  editElement: function () {
+  editElement: function (e) {
+    e.preventDefault();
     if (this.$el.hasClass("text")) {
       this._editing = true;
       this.render();
