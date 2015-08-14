@@ -11,6 +11,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'jquery-ui-rails'
 gem 'backbone-on-rails'
 gem 'bcrypt'
+gem 'bootstrap-sass'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
