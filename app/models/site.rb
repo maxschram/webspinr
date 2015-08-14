@@ -9,6 +9,6 @@ class Site < ActiveRecord::Base
   private
 
   def ensure_page
-    pages.create(title: "index", background: "green")
+    pages.create(title: "index", background_color: "green")
   end
 end

@@ -12,6 +12,7 @@ Webspinr.Views.EditSite = Backbone.CompositeView.extend({
 
 
   initialize: function (options) {
+    this.listenTo(this.model, "sync", this.addPagePropertiesMenu);
     this.listenTo(this.model, "sync", this.addPageView);
     this.listenTo(this.model, "sync", this.render);
     this.pageName = options.pageName;
@@ -31,7 +32,7 @@ Webspinr.Views.EditSite = Backbone.CompositeView.extend({
     var newPage = new Webspinr.Models.Page({
       title: title,
       site_id: this.model.id,
-      background: "green"
+      background_color: "green"
     });
 
 
@@ -60,6 +61,14 @@ Webspinr.Views.EditSite = Backbone.CompositeView.extend({
     var subview = this._pagesMenuView = new Webspinr.Views.PagesMenu({
       collection: this.model.pages(),
       model: this.model
+    });
+    this.addSubview(".menu-bar", subview);
+    subview.render();
+  },
+
+  addPagePropertiesMenu : function () {
+    var subview = this._pagesMenuView = new Webspinr.Views.PagePropertiesMenu({
+      model: this.currentPage()
     });
     this.addSubview(".menu-bar", subview);
     subview.render();

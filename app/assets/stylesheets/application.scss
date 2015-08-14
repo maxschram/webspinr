@@ -81,6 +81,12 @@ html, body, #root, .site, #page-container, .page, #elements {
 	 height: 100%;
  }
 
+ .page {
+	 background-repeat: no-repeat;
+	 background-size: cover;
+	 background-position: center;
+ }
+
  .menu-bar {
    background: gray;
 	 border: 1px solid;
@@ -220,6 +226,11 @@ html, body, #root, .site, #page-container, .page, #elements {
 	cursor: pointer;
 	background: gray;
 	border: 0;
+}
+
+.page-properties-menu {
+	top: 100px;
+	position: relative;
 }
 
 .box {

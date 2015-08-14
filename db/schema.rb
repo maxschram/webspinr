@@ -28,11 +28,12 @@ ActiveRecord::Schema.define(version: 20150814212830) do
   add_index "elements", ["page_id"], name: "index_elements_on_page_id", using: :btree
 
   create_table "pages", force: :cascade do |t|
-    t.string   "title",      null: false
-    t.integer  "site_id",    null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "background", null: false
+    t.string   "title",                         null: false
+    t.integer  "site_id",                       null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.string   "background_image", default: "", null: false
+    t.string   "background_color",              null: false
   end
 
   add_index "pages", ["site_id"], name: "index_pages_on_site_id", using: :btree
