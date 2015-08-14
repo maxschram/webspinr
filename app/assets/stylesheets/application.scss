@@ -190,16 +190,34 @@ html, body, #root, .site, #page-container, .page, #elements {
 }
 
 .element-properties-menu {
+	background: gray;
 	z-index: 5;
 	position: absolute;
 	box-shadow: 1px 1px black;
-	border-radius: 5px;
 	color: black;
+}
+
+.element-properties-menu .heading {
+	font-size: 20px;
+	padding: 10px;
+	border-bottom: 2px;
+	border-style: solid;
+}
+
+.element-properties-menu .subheading {
+	padding: 10px;
+	border-bottom: 2px solid;
+}
+
+.element-properties-menu .styles {
+	transform: translateX(25%);
 }
 
 .element-properties-menu .menu button {
 	font-size: 18px;
 	cursor: pointer;
+	background: gray;
+	border: 0;
 }
 
 .box {
