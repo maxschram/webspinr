@@ -189,35 +189,17 @@ html, body, #root, .site, #page-container, .page, #elements {
 	height: 100%;
 }
 
-.element-properties-menu .menu{
+.element-properties-menu {
+	z-index: 5;
 	position: absolute;
-	left: -120px;
-	background: gray;
-	width: 200px;
-	height: 300px;
 	box-shadow: 1px 1px black;
 	border-radius: 5px;
-	overflow: hidden;
 	color: black;
 }
 
 .element-properties-menu .menu button {
 	font-size: 18px;
-	background: gray;
-	width: 100%;
-	height: 40px;
-	outline: 0;
-	border: 0;
-	border-bottom: 1px solid black;
 	cursor: pointer;
-}
-
-.element-properties-menu .menu .style {
-	width: 30%;
-	margin: 0;
-	padding: 0;
-	border: 1px solid black;
-	box-sizing: border-box;
 }
 
 .box {

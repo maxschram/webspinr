@@ -3,6 +3,7 @@
 //= require jquery-ui/draggable
 //= require jquery-ui/resizable
 //= require jquery_serializejson
+//= require bootstrap
 //= require underscore
 //= require backbone
 //= require_tree ./utils

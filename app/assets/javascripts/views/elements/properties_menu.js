@@ -1,11 +1,12 @@
 Webspinr.Views.ElementPropertiesMenu = Backbone.CompositeView.extend({
   template: JST["elements/properties_menu"],
-  className: 'menu',
+  className: 'element-properties-menu',
 
   events: {
     "click .delete": "deleteElement",
     "click .color": "changeColor",
-    "click .style": "changeStyle"
+    "click .style": "changeStyle",
+    "mouseleave": "remove"
   },
 
   deleteElement: function () {
@@ -33,6 +34,7 @@ Webspinr.Views.ElementPropertiesMenu = Backbone.CompositeView.extend({
 
   render: function () {
     this.$el.html(this.template());
+    this.delegateEvents();
     return this;
   },
 
