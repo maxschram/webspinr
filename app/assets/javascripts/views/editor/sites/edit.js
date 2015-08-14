@@ -30,7 +30,8 @@ Webspinr.Views.EditSite = Backbone.CompositeView.extend({
 
     var newPage = new Webspinr.Models.Page({
       title: title,
-      site_id: this.model.id
+      site_id: this.model.id,
+      background: "green"
     });
 
 
