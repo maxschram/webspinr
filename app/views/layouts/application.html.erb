@@ -7,16 +7,6 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <% if logged_in? %>
-    <%= current_user.email %>
-    <%= button_to 'Logout', logout_url, method: 'delete' %>
-  <% else %>
-    <%= link_to 'Sign up', signup_url %>
-    <%= link_to 'Login', login_url %>
-  <% end %>
-
-  <%= flash[:errors].join("<br>").html_safe if flash[:errors] %>
   <%= yield %>
-
 </body>
 </html>
