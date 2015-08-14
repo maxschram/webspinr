@@ -3,6 +3,7 @@ Webspinr.Views.Page = Backbone.CompositeView.extend({
   className: 'page',
 
   initialize: function () {
+    this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.collection, 'add', this.addElementView);
     this.collection.each(this.addElementView.bind(this));
   },
@@ -14,7 +15,8 @@ Webspinr.Views.Page = Backbone.CompositeView.extend({
 
   render: function () {
     this.$el.html(this.template({ page: this.model }));
-    this.$el.css("background", this.model.get("background"));
+    this.$el.css("background-image", this.model.get("background_image"));
+    this.$el.css("background-color", this.model.get("background_color"));
     this.attachSubviews();
     return this;
   }
