@@ -1,4 +1,4 @@
-Webspinr.initialize =  function () {
+Webspinr.initialize = function () {
   new Webspinr.Routers.SiteRouter({
     $rootEl: $("#root")
   });

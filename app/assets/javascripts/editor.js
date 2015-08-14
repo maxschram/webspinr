@@ -1,10 +1,9 @@
 //= require jquery-ui/draggable
 //= require jquery-ui/resizable
 //= require jquery_serializejson
-//= require_tree ./utils
 //= require webspinr_editor
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections
-//= require_tree ./views
+//= require_tree ./views/editor
 //= require_tree ./routers
