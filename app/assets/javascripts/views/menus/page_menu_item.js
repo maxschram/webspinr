@@ -4,7 +4,7 @@ Webspinr.Views.PageMenuItem = Backbone.View.extend({
   className: "btn btn-default",
 
   initialize: function (options) {
-    this.site = options.site
+    this.site = options.site;
   },
 
   events: {

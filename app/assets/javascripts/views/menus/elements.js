@@ -7,6 +7,7 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
   },
 
   events: {
+    "click .btn": "dropFocus",
     "click .text": "createText",
     "click .list": "createList",
     "click .box-el": "createBox",
@@ -14,6 +15,10 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
     "click .line": "createLine",
     "click .internal-link": "createInternalLink",
     "click .external-link": "createExternalLink"
+  },
+
+  dropFocus: function (e) {
+    $(e.currentTarget).blur();
   },
 
   createText: function () {
