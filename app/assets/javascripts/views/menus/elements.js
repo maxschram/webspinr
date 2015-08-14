@@ -9,7 +9,7 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
   events: {
     "click .text": "createText",
     "click .list": "createList",
-    "click .box": "createBox",
+    "click .box-el": "createBox",
     "click .image": "showImageMenu",
     "click .line": "createLine",
     "click .internal-link": "createInternalLink",
