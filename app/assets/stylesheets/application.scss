@@ -226,9 +226,17 @@ html, body, #root, .site, #page-container, .page, #elements {
 
 
 .element:not(.box) {
+	z-index: 3;
+}
+
+.text {
 	z-index: 1;
 }
 
 .line {
 	z-index: 3;
+}
+
+p.element {
+	white-space: pre-line;
 }
