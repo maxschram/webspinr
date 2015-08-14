@@ -129,6 +129,9 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
           left: "50%",
           position: "absolute"
         },
+        class: [
+          "image"
+        ],
         src: src
       }
     });
