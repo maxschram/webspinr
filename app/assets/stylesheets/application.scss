@@ -81,6 +81,10 @@ html, body, #root, .site, #page-container, .page, #elements {
 	 height: 100%;
  }
 
+ #page-container:not(.editing) #elements {
+	 transform: translateY(-120px);
+ }
+
  .page {
 	 background-repeat: no-repeat;
 	 background-size: cover;
