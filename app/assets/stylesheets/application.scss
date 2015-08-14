@@ -83,10 +83,11 @@ html, body, #root, .site, #page-container, .page, #elements {
  }
 
  .menu-bar {
-   background: blue;
+   background: gray;
+	 border: 1px solid;
    width: 260px;
    height: 100%;
-   top: 65px;
+   top: 100px;
    float: left;
    position: absolute;
    z-index: 99;
