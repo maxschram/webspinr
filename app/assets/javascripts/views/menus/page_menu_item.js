@@ -1,6 +1,7 @@
 Webspinr.Views.PageMenuItem = Backbone.View.extend({
   template: JST["menus/page_menu_item"],
   tagName: 'button',
+  className: "btn btn-default",
 
   initialize: function (options) {
     this.site = options.site

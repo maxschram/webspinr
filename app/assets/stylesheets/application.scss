@@ -137,30 +137,12 @@ html, body, #root, .site, #page-container, .page, #elements {
    transform: translateX(50%);
  }
 
- .pages-menu button {
-	 background: red;
-   outline: 2px solid black;
-   border: 0;
-   width: 150px;
-   height: 40px;
-   font-size: 24px;
-   z-index: 1;
-	 cursor: pointer;
-	 margin: 0 0;
+ .pages-menu .pages {
+	 width: 100%;
  }
 
  .pages-menu .menu-title {
-	 background: green;
-	 font-size: 36px;
- }
-
- .pages-menu .new-page {
-	 background: red;
-	 width: 75px;
-	 font-size: 18px;
-	 transform: translateX(50%);
-	 height: 20px;
-	 margin-top: 10px;
+	 font-size: 30px;
  }
 
  .elements-menu .menu-title{
