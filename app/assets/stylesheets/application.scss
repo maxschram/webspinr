@@ -165,7 +165,6 @@ html, body, #root, .site, #page-container, .page, #elements {
   cursor: pointer;
   /*border: 2px dotted black;*/
 	outline: 2px dotted black;
-	z-index: 2;
 }
 
 .element.text.editing {
@@ -229,8 +228,13 @@ html, body, #root, .site, #page-container, .page, #elements {
 	z-index: 3;
 }
 
+.element.image {
+	z-index: 2;
+}
+
+
 .text {
-	z-index: 1;
+	z-index: 5;
 }
 
 .line {

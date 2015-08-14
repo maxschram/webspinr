@@ -14,6 +14,7 @@ Webspinr.Views.ElementPropertiesMenu = Backbone.CompositeView.extend({
   },
 
   changeColor: function (e) {
+    $(e.currentTarget).blur();
     var color = prompt("Enter a color"); //TODO: Replace with colorpicker
     if (this.model.get("tag") === "div") {
       this.model.get("attrs").style.background = color;
