@@ -1,6 +1,6 @@
 Webspinr.Views.PagesMenu = Backbone.CompositeView.extend({
   template: JST["menus/pages"],
-  className: 'pages-menu',
+  className: 'pages-menu menu',
 
   initialize: function (options) {
     this.listenTo(this.collection, "add", this.addPageMenuItemView);

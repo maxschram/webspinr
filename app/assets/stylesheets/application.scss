@@ -232,6 +232,17 @@ html, body, #root, .site, #page-container, .page, #elements {
 	border: 0;
 }
 
+.pages-menu.menu {
+	transform: translateX(25%);
+	width: 150px;
+	top: 400px;
+	position: relative;
+}
+
+.menu {
+	width: 150px;
+}
+
 .page-properties-menu {
 	top: 100px;
 	position: relative;
@@ -261,4 +272,8 @@ html, body, #root, .site, #page-container, .page, #elements {
 
 p.element {
 	white-space: pre-line;
+}
+
+.menu {
+	background: darkgray;
 }
