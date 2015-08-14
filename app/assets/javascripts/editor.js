@@ -1,11 +1,6 @@
-//= require jquery
-//= require jquery_ujs
 //= require jquery-ui/draggable
 //= require jquery-ui/resizable
 //= require jquery_serializejson
-//= require bootstrap
-//= require underscore
-//= require backbone
 //= require_tree ./utils
 //= require webspinr_editor
 //= require_tree ../templates
