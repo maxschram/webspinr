@@ -18,6 +18,7 @@ Webspinr.Views.EditSite = Backbone.CompositeView.extend({
     this.pageName = options.pageName;
     this.addElementsMenu();
     this.addPagesMenu();
+    $(".view-live").on("click", this.viewLive.bind(this));
   },
 
   viewIndex: function () {
@@ -94,7 +95,9 @@ Webspinr.Views.EditSite = Backbone.CompositeView.extend({
     subview.render();
   },
 
-  viewLive: function () {
+  viewLive: function (e) {
+    e.preventDefault();
+    $(e.currentTarget).blur();
     //TODO: change site title to address
     window.open("/sites/#/"+ this.model.id + "/" + this.currentPage().get("title"));
   },
