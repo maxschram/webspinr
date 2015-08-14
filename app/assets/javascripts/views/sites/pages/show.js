@@ -14,6 +14,7 @@ Webspinr.Views.Page = Backbone.CompositeView.extend({
 
   render: function () {
     this.$el.html(this.template({ page: this.model }));
+    this.$el.css("background", this.model.get("background"));
     this.attachSubviews();
     return this;
   }

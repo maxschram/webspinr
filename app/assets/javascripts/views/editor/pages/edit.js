@@ -6,7 +6,6 @@ Webspinr.Views.EditPage = Backbone.CompositeView.extend({
   },
 
   initialize: function () {
-    this.$el.css("background", this.model.get("background"));
     this.listenTo(this.collection, "add", this.render);
     this.listenTo(this.collection, 'add', this.addElementView);
     this.listenTo(this.collection, "remove", this.removeElementView);
@@ -25,6 +24,7 @@ Webspinr.Views.EditPage = Backbone.CompositeView.extend({
 
   render: function () {
     this.$el.html(this.template({ page: this.model }));
+    this.$el.css("background", this.model.get("background"));
     this.attachSubviews();
     this.onRender();
     return this;
