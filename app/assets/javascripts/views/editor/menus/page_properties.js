@@ -6,12 +6,18 @@ Webspinr.Views.PagePropertiesMenu = Backbone.View.extend({
   },
 
   events: {
-    "click .background-image": "setBackgroundImage"
+    "click .background-image": "setBackgroundImage",
+    "click .background-color": "setBackgroundColor"
   },
 
   setBackgroundImage: function () {
     var imageUrl = prompt("Enter an image url");
     this.model.save({ background_image: "url(" + imageUrl + ")"});
+  },
+
+  setBackgroundColor: function () {
+    var color = prompt("Enter a color");
+    this.model.save({ background_color: color });
   },
 
   render: function () {
