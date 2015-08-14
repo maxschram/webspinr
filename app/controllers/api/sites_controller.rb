@@ -1,6 +1,6 @@
 class Api::SitesController < ApplicationController
   before_action :require_login, except: :show
-  before_action :require_owner, except: [:index, :show]
+  before_action :require_owner, except: [:create, :index, :show]
 
   def index
     @sites = current_user.sites
