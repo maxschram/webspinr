@@ -5,6 +5,7 @@ Webspinr.Views.PageMenuItem = Backbone.View.extend({
 
   initialize: function (options) {
     this.site = options.site;
+    this.listenTo(this.model, "sync", this.render);
   },
 
   events: {

@@ -7,7 +7,15 @@ Webspinr.Views.PagePropertiesMenu = Backbone.View.extend({
 
   events: {
     "click .background-image": "setBackgroundImage",
-    "click .background-color": "setBackgroundColor"
+    "click .background-color": "setBackgroundColor",
+    "submit form": "setTitle",
+    "blur #title": "setTitle"
+  },
+
+  setTitle: function (e) {
+    e.preventDefault();
+    var newTitle = this.$("form").serializeJSON().title;
+    this.model.save({title: newTitle});
   },
 
   setBackgroundImage: function () {
