@@ -64,7 +64,7 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
 
   createInternalLink: function () {
     var pageName = prompt("Enter the name of the page to link to");
-    var url = "#/sites/" + this.model.id + '/' + pageName;
+    var url = "/sites#/" + this.model.id + '/' + pageName;
     var element = new Webspinr.Models.Element({
       tag: "a",
       attrs: {
