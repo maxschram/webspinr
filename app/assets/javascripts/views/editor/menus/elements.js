@@ -9,7 +9,6 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
   events: {
     "click .btn": "dropFocus",
     "click .text": "createText",
-    "click .list": "createList",
     "click .box-el": "createBox",
     "click .image": "showImageMenu",
     "click .line": "createLine",
@@ -164,10 +163,6 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
         this.currentPageView.collection.remove(element)
       }.bind(this)
     });
-  },
-
-  createList: function () {
-    alert("list");
   },
 
   render: function () {
