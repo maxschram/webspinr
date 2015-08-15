@@ -31,7 +31,7 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
     e.preventDefault();
     this.addMenu();
     $("#root").append(this._propertiesMenuView.render().$el);
-    this._propertiesMenuView.$el.css({'top': e.pageY - 2, 'left': e.pageX - 2});
+    this._propertiesMenuView.$el.css({'top': e.pageY - 5, 'left': e.pageX - 5});
   },
 
   addMenu: function () {
