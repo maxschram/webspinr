@@ -207,6 +207,7 @@ html, body, #root, .site, #page-container, .page, #elements {
 	z-index: 5;
 	position: absolute;
 	box-shadow: 1px 1px black;
+	border-radius: 5px;
 }
 
 .element-properties-menu .btn {
@@ -245,6 +246,7 @@ html, body, #root, .site, #page-container, .page, #elements {
 
 .menu {
 	width: 150px;
+	border-radius: 2px;
 }
 
 .page-properties-menu {
