@@ -41,7 +41,7 @@ Webspinr.Views.EditSite = Backbone.CompositeView.extend({
       success: function () {
         pages.add(newPage);
         view.render();
-        Backbone.history.navigate("#/editor/" + this.model.id + "/" + newPage.id);
+        Backbone.history.navigate(this.model.id + "/" + newPage.id);
       }.bind(this)
     });
   },

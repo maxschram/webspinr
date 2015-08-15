@@ -18,12 +18,16 @@ Webspinr.Views.PagePropertiesMenu = Backbone.View.extend({
     this.model.save({title: newTitle});
   },
 
-  setBackgroundImage: function () {
+  setBackgroundImage: function (e) {
+    e.preventDefault();
+    $(e.currentTarget).blur();
     var imageUrl = prompt("Enter an image url");
     this.model.save({ background_image: "url(" + imageUrl + ")"});
   },
 
-  setBackgroundColor: function () {
+  setBackgroundColor: function (e) {
+    e.preventDefault();
+    $(e.currentTarget).blur();
     var color = prompt("Enter a color");
     this.model.save({ background_color: color });
   },
