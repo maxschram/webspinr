@@ -183,6 +183,10 @@ html, body, #root, .site, #page-container, .page, #elements {
    height: 100px;
  }
 
+ .background-buttons {
+	 width: 25px;
+ }
+
 #page-container.editing .element:hover {
   cursor: pointer;
   /*border: 2px dotted black;*/
