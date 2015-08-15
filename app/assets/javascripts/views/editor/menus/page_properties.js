@@ -21,7 +21,7 @@ Webspinr.Views.PagePropertiesMenu = Backbone.View.extend({
   },
 
   render: function () {
-    this.$el.html(this.template());
+    this.$el.html(this.template({ page: this.model }));
     return this;
   }
 });

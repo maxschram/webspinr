@@ -11,7 +11,8 @@ Webspinr.Views.PageMenuItem = Backbone.View.extend({
     "click": "switchPage"
   },
 
-  switchPage: function () {
+  switchPage: function (e) {
+    $(e.currentTarget).blur();
     Backbone.history.navigate(
       this.site.id + "/" + this.model.get("title"),
       { trigger: true }

@@ -166,6 +166,12 @@ html, body, #root, .site, #page-container, .page, #elements {
 	text-align: center;
  }
 
+ .page-properties-menu .menu-title {
+	 font-size: 16px;
+	 position: relative;
+	 text-align: center;
+ }
+
  #page-container.editing {
    border: 2px solid black;
   //  margin-top: 30px;
@@ -255,6 +261,20 @@ html, body, #root, .site, #page-container, .page, #elements {
 	top: 100px;
 	position: relative;
 	transform: translateX(15%);
+}
+
+.page-properties-menu input {
+	width: 70%;
+	position: relative;
+	outline: 0;
+	border: 0;
+	background: white;
+	border: 2px solid gray;
+}
+
+.page-properties-menu form {
+	padding-left: 10px;
+	background: white;
 }
 
 .box {
