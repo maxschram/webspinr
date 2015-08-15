@@ -83,6 +83,10 @@ html, body, #root, .site, #page-container, .page, #elements {
 
  #page-container:not(.editing) #elements {
 	 transform: translateY(-120px);
+}
+
+ .navbar {
+	 margin-bottom: 0;
  }
 
  .page {
@@ -95,9 +99,9 @@ html, body, #root, .site, #page-container, .page, #elements {
    background: #1A1A1A;
    width: 260px;
    height: 100%;
-   top: 50px;
+   top: 0px;
    float: left;
-   position: absolute;
+   position: relative;
    z-index: 99;
    transition: left 0.5s;
    left: -280px;
@@ -108,15 +112,17 @@ html, body, #root, .site, #page-container, .page, #elements {
  }
 
  .menu-button {
+	 outline: 2px solid gray;
    width: 50px;
    height: 50px;
    background: #1A1A1A;
    position: absolute;
-   top: 340px;
-   color: white;
+   top: 50%;
+   color: gray;
    border-radius: 3px;
    left: -25px;
    transform: rotate(45deg);
+	 z-index: 50;
  }
 
  .menu-button span {
@@ -160,7 +166,7 @@ html, body, #root, .site, #page-container, .page, #elements {
 
  #page-container.editing {
    border: 2px solid black;
-   margin-top: 30px;
+  //  margin-top: 30px;
  }
 
  .box {
@@ -197,11 +203,10 @@ html, body, #root, .site, #page-container, .page, #elements {
 }
 
 .element-properties-menu {
-	background: gray;
+	background: darkgray;
 	z-index: 5;
 	position: absolute;
 	box-shadow: 1px 1px black;
-	color: darkgray;
 }
 
 .element-properties-menu .btn {
@@ -209,26 +214,26 @@ html, body, #root, .site, #page-container, .page, #elements {
 }
 
 .element-properties-menu .heading {
+	color: black;
 	font-size: 20px;
 	padding: 10px;
-	border-bottom: 2px;
-	border-style: solid;
 }
 
 .element-properties-menu .subheading {
 	padding: 10px;
-	border-bottom: 2px solid;
+	text-align: center;
 }
 
 .element-properties-menu .styles {
-	transform: translateX(25%);
+	background: white;
+	padding: 2px 5px 2px 5px;
+	// transform: translateX(25%);
 }
 
 .element-properties-menu .menu button {
 	font-size: 18px;
 	cursor: pointer;
-	background: gray;
-	border: 0;
+	background: white;
 }
 
 .pages-menu.menu {
@@ -245,6 +250,7 @@ html, body, #root, .site, #page-container, .page, #elements {
 .page-properties-menu {
 	top: 100px;
 	position: relative;
+	transform: translateX(15%);
 }
 
 .box {
@@ -273,6 +279,6 @@ p.element {
 	white-space: pre-line;
 }
 
-.menu {
+.menu-bar .menu {
 	background: darkgray;
 }
