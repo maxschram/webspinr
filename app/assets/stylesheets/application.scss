@@ -11,9 +11,9 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require_self
  *= require jquery-ui/draggable
  *= require jquery-ui/resizable
- *= require_self
  */
 
  /* http://meyerweb.com/eric/tools/css/reset/
