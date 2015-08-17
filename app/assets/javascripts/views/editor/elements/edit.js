@@ -104,7 +104,7 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
     return this;
   },
 
-  updatePosition: function () {
+  updateSize: function (e, ui) {
     var width = this.$el.css("width");
     var height = this.$el.css("height");
     this.model.get("attrs").style.width = width;
@@ -112,7 +112,7 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
     this.model.save();
   },
 
-  updateSize: function () {
+  updatePosition: function () {
     var left = this.$el.css("left");
     var top = this.$el.css("top");
     this.model.get("attrs").style.left = left;
@@ -124,7 +124,7 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
     var view = this;
 
     this.$el.draggable({
-      stop: this.updateSize.bind(this)
+      stop: this.updatePosition.bind(this)
     });
 
     if (this.model.get("tag") !== "img") {
@@ -132,7 +132,7 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
       this.$el.resizable("destroy");
       this.$el.resizable({
         autoHide: true,
-        stop: this.updatePosition.bind(this)
+        stop: this.updateSize.bind(this)
       });
     }
 
