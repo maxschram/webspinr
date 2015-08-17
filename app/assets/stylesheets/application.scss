@@ -223,6 +223,16 @@ html, body, #root, .site, #page-container, .page, #elements {
 	color: black;
 }
 
+.text-element-form {
+	width: 700px;
+	height: 200px;
+}
+
+.text-element-form textarea {
+	width: 100%;
+	height: 100%;
+}
+
 .element-properties-menu .heading {
 	color: black;
 	font-size: 20px;
