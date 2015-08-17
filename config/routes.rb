@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'session#new'
+  root 'static_pages#root'
 
   namespace :api do
     resources :sites,

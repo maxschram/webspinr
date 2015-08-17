@@ -1,3 +1,4 @@
+//= require webspinr
 //= require webspinr_sites
 //= require_tree ../templates
 //= require_tree ./models
