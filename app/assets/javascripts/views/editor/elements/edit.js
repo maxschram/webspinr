@@ -68,7 +68,7 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
     if (this.$el.hasClass("text")) {
       this._editing = true;
       this.render();
-      this.$("input").focus();
+      this.$("textarea").focus();
     }
   },
 

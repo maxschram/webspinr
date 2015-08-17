@@ -224,13 +224,17 @@ html, body, #root, .site, #page-container, .page, #elements {
 }
 
 .text-element-form {
+	position: relative;
 	width: 700px;
 	height: 200px;
 }
 
 .text-element-form textarea {
-	width: 100%;
-	height: 100%;
+	position: relative;
+	width: 700px;
+	top: -60px;
+	bottom: 0;
+	font-size: 16px;
 }
 
 .element-properties-menu .heading {
