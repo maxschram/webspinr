@@ -8,10 +8,10 @@ class UsersController < ApplicationController
 
     if @user.save
       login_user(@user)
-      redirect_to :root
+      redirect_to editor_url
     else
-      flash.now[:errors] = @user.errors.full_messages
-      render 'new'
+      flash[:errors] = @user.errors.full_messages
+      redirect_to :root
     end
   end
 
