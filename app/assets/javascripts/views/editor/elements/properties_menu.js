@@ -8,7 +8,8 @@ Webspinr.Views.ElementPropertiesMenu = Backbone.CompositeView.extend({
     "click .style": "changeStyle",
     "click .save-color": "setColor",
     "mouseleave": "remove",
-    "change .font-size": "changeFontSize"
+    "change .font-size": "changeFontSize",
+    "submit .font-size": "changeFontSize"
   },
 
   deleteElement: function () {
@@ -16,6 +17,7 @@ Webspinr.Views.ElementPropertiesMenu = Backbone.CompositeView.extend({
   },
 
   changeFontSize: function (e) {
+    e.preventDefault();
     var newFontSize = $(e.currentTarget).serializeJSON().size;
     this.model.get("attrs").style["font-size"] = newFontSize + "px";
     this.model.save();
