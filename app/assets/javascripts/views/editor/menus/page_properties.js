@@ -11,7 +11,8 @@ Webspinr.Views.PagePropertiesMenu = Backbone.CompositeView.extend({
     "submit form": "setTitle",
     "blur #title": "setTitle",
     "mouseleave .colorpicker": "removeColorpicker",
-    "click .save-color": "setColor"
+    "click .save-color": "setColor",
+    "mouseleave": "removeColorpicker"
   },
 
   setTitle: function (e) {
@@ -30,17 +31,18 @@ Webspinr.Views.PagePropertiesMenu = Backbone.CompositeView.extend({
   setBackgroundColor: function (e) {
     e.preventDefault();
     $(e.currentTarget).blur();
-
-    var colorpicker = new Webspinr.Views.Colorpicker ({
-      model: this.model,
-      setColor: this.setColor.bind(this)
-    });
-    this._colorpicker = colorpicker;
-    colorpicker.render();
-    this.$(".save-color").focus();
-    this.$el.append(colorpicker.$el);
-    // var color = prompt("Enter a color");
-    // this.model.save({ background_color: color });
+    if (this._colorpicker) {
+      this.removeColorpicker();
+    } else {
+      var colorpicker = new Webspinr.Views.Colorpicker ({
+        model: this.model,
+        setColor: this.setColor.bind(this)
+      });
+      this._colorpicker = colorpicker;
+      colorpicker.render();
+      this.$(".save-color").focus();
+      this.$el.append(colorpicker.$el);
+    }
   },
 
   setColor: function () {
