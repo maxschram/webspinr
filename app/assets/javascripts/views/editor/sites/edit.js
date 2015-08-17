@@ -13,11 +13,11 @@ Webspinr.Views.EditSite = Backbone.CompositeView.extend({
 
   initialize: function (options) {
     this.listenTo(this.model, "sync", this.addPagePropertiesMenu);
+    this.listenTo(this.model, "sync", this.addPagesMenu);
     this.listenTo(this.model, "sync", this.addPageView);
     this.listenTo(this.model, "sync", this.render);
     this.pageName = options.pageName;
     this.addElementsMenu();
-    this.addPagesMenu();
   },
 
   viewIndex: function () {
@@ -40,7 +40,10 @@ Webspinr.Views.EditSite = Backbone.CompositeView.extend({
       success: function () {
         pages.add(newPage);
         view.render();
-        Backbone.history.navigate(this.model.id + "/" + newPage.id);
+        Backbone.history.navigate(
+          this.model.id + "/" + newPage.escape("title"),
+          { trigger: true }
+        );
       }.bind(this)
     });
   },
