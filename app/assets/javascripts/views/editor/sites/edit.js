@@ -18,7 +18,6 @@ Webspinr.Views.EditSite = Backbone.CompositeView.extend({
     this.pageName = options.pageName;
     this.addElementsMenu();
     this.addPagesMenu();
-    $(".view-live").on("click", this.viewLive.bind(this));
   },
 
   viewIndex: function () {
@@ -105,6 +104,7 @@ Webspinr.Views.EditSite = Backbone.CompositeView.extend({
   render: function () {
     this.$el.html(this.template({ site: this.model }));
     this.attachSubviews();
+    $(".view-live").on("click", this.viewLive.bind(this));
     this.onRender();
     return this;
   }
