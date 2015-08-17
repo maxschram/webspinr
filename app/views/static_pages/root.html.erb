@@ -53,19 +53,18 @@
 
 				<h1 class="margin-base-vertical">Welcome to Webspinr</h1>
 
-				<form class="margin-base-vertical" action="<%= login_url %>" method="post">
+				<form class="login-form margin-base-vertical" action="<%= login_url %>" method="post">
           <%= auth_token %>
 					<p class="input-group">
 						<span class="input-group-addon"></span></span>
-						<input type="text" class="form-control input-lg" name="user[email]" placeholder="E-mail address" />
+						<input type="text" id="email" class="form-control input-lg" name="user[email]" placeholder="E-mail address" />
 					</p>
           <p class="input-group">
             <span class="input-group-addon"></span>
-            <input type="password" class="form-control input-lg" name="user[password]" placeholder="Password" />
+            <input type="password" id="password" class="form-control input-lg" name="user[password]" placeholder="Password" />
           </p>
-					<p class="text-center">
 						<button type="submit" class="btn btn-success btn-lg">Login</button>
-					</p>
+            <button class="guest-login btn btn-primary btn-lg">Guest Login</button>
 					</span>
 				</form>
 
