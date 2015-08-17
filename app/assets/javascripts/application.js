@@ -16,3 +16,4 @@
 //= require underscore
 //= require backbone
 //= require_tree ./utils
+//= require static_pages
