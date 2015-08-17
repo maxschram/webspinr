@@ -85,7 +85,7 @@
         $("#email").val("guest");
         $("#password").val("password");
         $(".errors").empty();
-        setTimeout($(".login-form").submit, 500);
+        $(".login-form").submit();
       });
 
       $(".new-account").on("click", function (e) {
