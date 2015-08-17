@@ -10,9 +10,8 @@ Webspinr.Views.PagePropertiesMenu = Backbone.CompositeView.extend({
     "click .background-color": "setBackgroundColor",
     "submit form": "setTitle",
     "blur #title": "setTitle",
-    "click .save-color": "setColor",
-    "blur .save-color": "removeColorpicker",
-    "mouseleave .colorpicker": "removeColorpicker"
+    "mouseleave .colorpicker": "removeColorpicker",
+    "click .save-color": "setColor"
   },
 
   setTitle: function (e) {
@@ -34,7 +33,7 @@ Webspinr.Views.PagePropertiesMenu = Backbone.CompositeView.extend({
 
     var colorpicker = new Webspinr.Views.Colorpicker ({
       model: this.model,
-      callback: this.setColor.bind(this)
+      setColor: this.setColor.bind(this)
     });
     this._colorpicker = colorpicker;
     colorpicker.render();
@@ -44,13 +43,16 @@ Webspinr.Views.PagePropertiesMenu = Backbone.CompositeView.extend({
     // this.model.save({ background_color: color });
   },
 
-  setColor: function (color) {
+  setColor: function () {
+    var color = this._colorpicker.getColor();
     this.model.save({ background_color: color });
-    this.removeColorpicker();
   },
 
   removeColorpicker: function () {
-    this._colorpicker.remove();
+    if ( this._colorpicker ) {
+      this._colorpicker.remove();
+      this._colorpicker = null;
+    }
   },
 
   render: function () {

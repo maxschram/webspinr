@@ -3,7 +3,6 @@ Webspinr.Views.Colorpicker = Backbone.View.extend({
   className: 'colorpicker',
 
   initialize: function (options) {
-    this.setColor = options.callback;
   },
 
   hexFromRGB: function (r, g, b) {
@@ -32,11 +31,6 @@ Webspinr.Views.Colorpicker = Backbone.View.extend({
       var hex = this.hexFromRGB( red, green, blue );
       var color = "#" + hex;
       return color;
-    },
-
-    changeColor: function () {
-      this.refreshSwatch();
-      this.setColor(this.getColor());
     },
 
     render: function () {
