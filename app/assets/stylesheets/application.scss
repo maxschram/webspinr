@@ -312,15 +312,15 @@ p.element {
 #red, #green, #blue {
 	 float: left;
 	 clear: left;
-	 width: 300px;
-	 margin: 15px;
+	 width: 150px;
+	 margin: 5px;
  }
 
  #swatch {
-	 width: 120px;
-	 height: 100px;
+	 width: 60px;
+	 height: 50px;
 	 margin-top: 18px;
-	 margin-left: 350px;
+	 margin-left: 180px;
 	 background-image: none;
  }
 
@@ -333,7 +333,11 @@ p.element {
 
 
  .colorpicker {
+	 z-index: 100;
 	 position: absolute;
-	 width: 500px;
-	 background: none;
+	 width: 250px;
+	 height: 120px;
+	 background: black;
+	 left: 150px;
+	 top: 10px;
  }

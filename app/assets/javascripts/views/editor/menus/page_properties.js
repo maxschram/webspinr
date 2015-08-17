@@ -1,4 +1,4 @@
-Webspinr.Views.PagePropertiesMenu = Backbone.View.extend({
+Webspinr.Views.PagePropertiesMenu = Backbone.CompositeView.extend({
   template: JST["menus/page_properties"],
   className: 'page-properties-menu',
 
@@ -9,7 +9,10 @@ Webspinr.Views.PagePropertiesMenu = Backbone.View.extend({
     "click .background-image": "setBackgroundImage",
     "click .background-color": "setBackgroundColor",
     "submit form": "setTitle",
-    "blur #title": "setTitle"
+    "blur #title": "setTitle",
+    "click .save-color": "setColor",
+    "blur .save-color": "removeColorpicker",
+    "mouseleave .colorpicker": "removeColorpicker"
   },
 
   setTitle: function (e) {
@@ -29,10 +32,25 @@ Webspinr.Views.PagePropertiesMenu = Backbone.View.extend({
     e.preventDefault();
     $(e.currentTarget).blur();
 
-    var colorpicker = new Webspinr.Views.Colorpicker ({ model: this.model });
-    $("#root").append(colorpicker.render().$el);
+    var colorpicker = new Webspinr.Views.Colorpicker ({
+      model: this.model,
+      callback: this.setColor.bind(this)
+    });
+    this._colorpicker = colorpicker;
+    colorpicker.render();
+    this.$(".save-color").focus();
+    this.$el.append(colorpicker.$el);
     // var color = prompt("Enter a color");
     // this.model.save({ background_color: color });
+  },
+
+  setColor: function (color) {
+    this.model.save({ background_color: color });
+    this.removeColorpicker();
+  },
+
+  removeColorpicker: function () {
+    this._colorpicker.remove();
   },
 
   render: function () {
