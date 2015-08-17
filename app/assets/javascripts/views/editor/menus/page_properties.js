@@ -2,7 +2,8 @@ Webspinr.Views.PagePropertiesMenu = Backbone.CompositeView.extend({
   template: JST["menus/page_properties"],
   className: 'page-properties-menu',
 
-  initialize: function () {
+  initialize: function (options) {
+    this.site = options.site;
   },
 
   events: {
@@ -12,7 +13,12 @@ Webspinr.Views.PagePropertiesMenu = Backbone.CompositeView.extend({
     "blur #title": "setTitle",
     "mouseleave .colorpicker": "removeColorpicker",
     "click .save-color": "setColor",
-    "mouseleave": "removeColorpicker"
+    "mouseleave": "removeColorpicker",
+    "click .view-page-live": "viewLive"
+  },
+
+  viewLive: function () {
+    window.open("sites#/" + this.site.id + "/" + this.model.escape("title"));
   },
 
   setTitle: function (e) {

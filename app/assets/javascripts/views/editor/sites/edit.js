@@ -3,7 +3,6 @@ Webspinr.Views.EditSite = Backbone.CompositeView.extend({
   template: JST["sites/edit"],
   className: 'site',
   events: {
-    "click .live": "viewLive",
     "mouseenter .menu-button": "toggleMenu",
     "mouseleave .menu-bar": "toggleMenu",
     "click .new-page": "addPage",
@@ -71,7 +70,8 @@ Webspinr.Views.EditSite = Backbone.CompositeView.extend({
 
   addPagePropertiesMenu : function () {
     var subview = this._pagesMenuView = new Webspinr.Views.PagePropertiesMenu({
-      model: this.currentPage()
+      model: this.currentPage(),
+      site: this.model
     });
     this.addSubview(".menu-bar", subview);
     subview.render();
@@ -110,5 +110,10 @@ Webspinr.Views.EditSite = Backbone.CompositeView.extend({
     $(".view-live").on("click", this.viewLive.bind(this));
     this.onRender();
     return this;
+  },
+
+  onRender: function () {
+    this.delegateEvents();
+    Backbone.CompositeView.prototype.onRender.call(this);
   }
 });

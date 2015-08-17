@@ -41,7 +41,7 @@ Webspinr.Routers.EditorRouter = Backbone.Router.extend({
     if (this._view) {
       this._view.remove();
     }
-
+    this._view = view;
     this.$rootEl.html(view.$el);
     view.render();
   }

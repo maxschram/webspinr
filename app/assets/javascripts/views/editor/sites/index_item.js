@@ -2,11 +2,16 @@ Webspinr.Views.SitesIndexItem = Backbone.View.extend({
   template: JST["sites/index_item"],
 
   events: {
-    "click": "editSite"
+    "click .edit": "editSite",
+    "click .live": "viewSite"
   },
 
   initialize: function () {
     this.listenTo(this.model, "sync", this.render);
+  },
+
+  viewSite : function () {
+    window.open("sites#" + this.model.id);
   },
 
   editSite: function () {

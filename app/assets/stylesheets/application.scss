@@ -168,9 +168,23 @@ html, body, #root, .site, #page-container, .page, #elements {
  }
 
  .page-properties-menu .menu-title {
-	 font-size: 16px;
+	 font-size: 26px;
 	 position: relative;
 	 text-align: center;
+ }
+
+ .site-index-item {
+	 width: 300px;
+ }
+
+ .site-index-item .site-title {
+	 margin-right: 30px;
+	 font-weight: bold;
+	 font-size: 20px;
+ }
+
+ .site-index-item .btn {
+	 cursor: pointer;
  }
 
  .colorpicker .title {
@@ -379,10 +393,6 @@ p.element {
 	 width: 500px;
 	 margin-top: 50px;
 	 margin-left: 20px;
- }
-
- .site-index-item {
-	 cursor: pointer;
  }
 
  .new-site-button {
