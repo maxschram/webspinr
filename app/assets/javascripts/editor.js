@@ -1,5 +1,6 @@
 //= require jquery-ui/draggable
 //= require jquery-ui/resizable
+//= require jquery-ui/slider
 //= require jquery_serializejson
 //= require webspinr_editor
 //= require_tree ../templates

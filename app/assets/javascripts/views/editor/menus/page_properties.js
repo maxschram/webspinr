@@ -28,8 +28,11 @@ Webspinr.Views.PagePropertiesMenu = Backbone.View.extend({
   setBackgroundColor: function (e) {
     e.preventDefault();
     $(e.currentTarget).blur();
-    var color = prompt("Enter a color");
-    this.model.save({ background_color: color });
+
+    var colorpicker = new Webspinr.Views.Colorpicker ({ model: this.model });
+    $("#root").append(colorpicker.render().$el);
+    // var color = prompt("Enter a color");
+    // this.model.save({ background_color: color });
   },
 
   render: function () {
