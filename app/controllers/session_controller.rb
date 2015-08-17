@@ -12,8 +12,8 @@ class SessionController < ApplicationController
       login_user(@user)
       redirect_to editor_url
     else
-      flash.now[:errors] = ["Invalid username/password"]
-      render 'new'
+      flash[:errors] = ["Invalid username/password"]
+      redirect_to :root
     end
   end
 
