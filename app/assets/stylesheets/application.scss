@@ -173,6 +173,10 @@ html, body, #root, .site, #page-container, .page, #elements {
 	 text-align: center;
  }
 
+ .colorpicker .title {
+	 background: darkgray;
+ }
+
  #page-container.editing {
    border: 2px solid black;
   //  margin-top: 30px;
@@ -355,9 +359,11 @@ p.element {
 	 position: absolute;
 	 width: 300px;
 	 height: 150px;
-	 background: black;
+	 background: white;
 	 left: 150px;
 	 top: 10px;
+	 border-radius: 5px;
+	 box-shadow: 1px 1px black;
  }
 
  .colorpicker .save-color {
