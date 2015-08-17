@@ -51,6 +51,9 @@
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3 panel panel-default">
 
+        <button class="login btn btn-default">Login</button>
+        <button class="new-account btn btn-default">Create Account</button>
+        
 				<h1 class="margin-base-vertical">Welcome to Webspinr</h1>
 
 				<form class="login-form margin-base-vertical" action="<%= login_url %>" method="post">
@@ -63,11 +66,10 @@
             <span class="input-group-addon"></span>
             <input type="password" id="password" class="form-control input-lg" name="user[password]" placeholder="Password" />
           </p>
-						<button type="submit" class="btn btn-success btn-lg">Login</button>
+						<button type="submit" class="submit btn btn-success btn-lg">Login</button>
             <button class="guest-login btn btn-primary btn-lg">Guest Login</button>
 					</span>
 				</form>
-
 			</div><!-- //main content -->
 		</div><!-- //row -->
 	</div> <!-- //container -->
