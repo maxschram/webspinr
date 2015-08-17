@@ -30,7 +30,7 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
           top: "50%",
           left: "50%",
           position: "absolute",
-          "font-size": "100%"
+          "font-size": "16px"
         },
         class: [
           "text"

@@ -4,8 +4,12 @@
   <button class="delete btn btn-default">Delete</button>
   <% if (element.get("attrs").class.indexOf("text") !== -1) { %>
     <h3 class="subheading">Font-Size</h3>
-    <input type="number"
+    <form class="font-size">
+    <input class="font-field"
+           type="number"
+           name="size"
            value="<%= element.get("attrs").style["font-size"].slice(0,-2) %>">
+    </form>
   <%  } %>
   <h3 class="subheading">Styles</h3>
     <div class="btn-group-xs styles" role="group" aria-label="...">

@@ -7,11 +7,19 @@ Webspinr.Views.ElementPropertiesMenu = Backbone.CompositeView.extend({
     "click .color": "changeColor",
     "click .style": "changeStyle",
     "click .save-color": "setColor",
-    "mouseleave": "remove"
+    "mouseleave": "remove",
+    "change .font-size": "changeFontSize"
   },
 
   deleteElement: function () {
     this.model.destroy();
+  },
+
+  changeFontSize: function (e) {
+    var newFontSize = $(e.currentTarget).serializeJSON().size;
+    this.model.get("attrs").style["font-size"] = newFontSize + "px";
+    this.model.save();
+    this.model.trigger("sync");
   },
 
   changeColor: function (e) {
