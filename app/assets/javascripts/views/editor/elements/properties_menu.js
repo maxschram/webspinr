@@ -6,6 +6,7 @@ Webspinr.Views.ElementPropertiesMenu = Backbone.CompositeView.extend({
     "click .delete": "deleteElement",
     "click .color": "changeColor",
     "click .style": "changeStyle",
+    "click .save-color": "setColor",
     "mouseleave": "remove"
   },
 
@@ -15,7 +16,15 @@ Webspinr.Views.ElementPropertiesMenu = Backbone.CompositeView.extend({
 
   changeColor: function (e) {
     $(e.currentTarget).blur();
-    var color = prompt("Enter a color"); //TODO: Replace with colorpicker
+    // var color = prompt("Enter a color"); //TODO: Replace with colorpicker
+    var colorpicker = new Webspinr.Views.Colorpicker({ model: this.model });
+    this._colorpicker = colorpicker;
+    colorpicker.render();
+    this.$el.append(colorpicker.$el);
+  },
+
+  setColor: function () {
+    var color = this._colorpicker.getColor();
     if (this.model.get("tag") === "div") {
       this.model.get("attrs").style.background = color;
     } else {
