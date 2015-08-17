@@ -3,16 +3,22 @@ Webspinr.Views.SitesIndex = Backbone.CompositeView.extend({
   className: 'site-index',
 
   events: {
-    "click .new-site": "newSite"
+    // "click .new-site": "newSite"
   },
 
   initialize: function () {
     this.listenTo(this.collection, "add", this.addSiteIndexItem);
     this.collection.each(this.addSiteIndexItem.bind(this));
+    this.addNewSiteView();
   },
 
   newSite: function () {
     Backbone.history.navigate("#/new", { trigger: true });
+  },
+
+  addNewSiteView: function () {
+    var subview = new Webspinr.Views.NewSite();
+    this.addSubview(".new-site", subview);
   },
 
   addSiteIndexItem: function (site) {
