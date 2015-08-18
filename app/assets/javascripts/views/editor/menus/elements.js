@@ -30,7 +30,8 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
           top: "50%",
           left: "50%",
           position: "absolute",
-          "font-size": "16px"
+          "font-size": "16px",
+          "z-index": 2
         },
         class: [
           "text"
@@ -50,7 +51,8 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
           position: "absolute",
           background: "black",
           width: "1000px",
-          height: "5px"
+          height: "5px",
+          "z-index": 2
         },
         class: [
           "box",
@@ -71,7 +73,8 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
         style: {
           top: "50%",
           left: "50%",
-          position: "absolute"
+          position: "absolute",
+          "z-index": 2
         },
         class: [
           "link text"
@@ -92,7 +95,8 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
         style: {
           top: "50%",
           left: "50%",
-          position: "absolute"
+          position: "absolute",
+          "z-index": 2
         },
         class: [
           "link text"
@@ -135,7 +139,8 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
         style: {
           top: "50%",
           left: "50%",
-          position: "absolute"
+          position: "absolute",
+          "z-index": 1
         },
         class: [
           "image"
@@ -158,7 +163,8 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
           position: "absolute",
           width: "50px",
           height: "50px",
-          background: "darksalmon"
+          background: "darksalmon",
+          "z-index": 0
         },
         class: [
           "box"

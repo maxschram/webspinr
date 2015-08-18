@@ -314,27 +314,27 @@ html, body, #root, .site, #page-container, .page, #elements {
 	background: white;
 }
 
-.box {
-	z-index: 0;
-}
-
-
-.element:not(.box) {
-	z-index: 3;
-}
-
-.element.image {
-	z-index: 2;
-}
-
-
-.text {
-	z-index: 5;
-}
-
-.line {
-	z-index: 3;
-}
+// .box {
+// 	z-index: 0;
+// }
+//
+//
+// .element:not(.box) {
+// 	z-index: 3;
+// }
+//
+// .element.image {
+// 	z-index: 2;
+// }
+//
+//
+// .text {
+// 	z-index: 5;
+// }
+//
+// .line {
+// 	z-index: 3;
+// }
 
 p.element {
 	white-space: pre-line;
