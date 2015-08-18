@@ -9,7 +9,6 @@ Webspinr.Views.SitesIndexItem = Backbone.View.extend({
   },
 
   initialize: function () {
-    // this.listenTo(this.model, "sync", this.render);
   },
 
   downloadSite: function (e) {
@@ -29,7 +28,7 @@ Webspinr.Views.SitesIndexItem = Backbone.View.extend({
           var downloadLink = $("<a>")
           downloadLink.addClass("btn btn-link")
                       .attr("download", page.get("title")+ ".html")
-                      .html(page.get("title"))
+                      .html(page.get("title") + ".html")
                       .attr("href", this.makeFile(pageHTML));
           this.$(".download-links").append(downloadLink);
         }.bind(this));
