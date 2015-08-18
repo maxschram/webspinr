@@ -134,7 +134,8 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
       this.$el.resizable("destroy");
       this.$el.resizable({
         autoHide: true,
-        stop: this.updateSize.bind(this)
+        stop: this.updateSize.bind(this),
+        grid: [5, 5]
       });
     }
 
