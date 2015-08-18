@@ -6,9 +6,9 @@ Webspinr is a drag-and-drop website builder with a Rails backend and Backbone fr
 - [x] Create a website with multiple pages
 - [x] Drag and drop different elements onto the page
 - [x] Drag the elements to reposition them
-- [ ] Click on the elements to change their properties
+- [x] Click on the elements to change their properties
 - [x] View the live website they are building
-- [ ] Download the html/css of the website they built
+- [x] Download the html/css of the website they built
 
 ## Design Docs
 * [View Wireframes][views]
@@ -53,7 +53,6 @@ I will add a button that will package up the html from the page and instead of p
 ### Bonus Features (TBD)
 - [ ] Option to create the website a separate heroku app
 - [ ] Option to download the apps html and css and a lite webserver
-- [ ] Adding pictures to created sites
 - [ ] Adding dynamic content to created sites
 - [ ] Adding drag select to remove elements
 
