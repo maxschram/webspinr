@@ -47,7 +47,7 @@ Webspinr.Views.ElementPropertiesMenu = Backbone.CompositeView.extend({
   changeStyle: function (e) {
     $(e.currentTarget).blur();
     var style = $(e.currentTarget).data("style");
-    var borderRadius = style * 10 + "px";
+    var borderRadius = (style * 10 - 10) + "px";
     this.model.get("attrs").style["border-radius"] = borderRadius;
     this.model.save();
     this.model.trigger("sync");
