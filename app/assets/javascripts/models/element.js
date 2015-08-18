@@ -21,7 +21,8 @@ Webspinr.Models.Element = Backbone.Model.extend({
             html.addClass(klass);
           });
         } else if (attr === 'href') {
-          debugger;
+          var reg = /\/\d\/(\w*)/;
+          html.attr(attr, attrs[attr].match(reg)[1]+".html");
         } else {
           html.attr(attr, attrs[attr]);
         }

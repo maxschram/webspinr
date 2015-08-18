@@ -21,7 +21,8 @@ Webspinr.Views.SitesIndexItem = Backbone.View.extend({
         var pages = [];
         this.model.pages().each(function (page) {
           var background_color = "background-color: " + page.get("background_color");
-          pageHTML = "<style> body {\n" + background_color + "} </style>\n";
+          pageHTML = "<head><link rel=stylesheet type=text/css href=https://necolas.github.io/normalize.css/3.0.2/normalize.css></head>";
+          pageHTML += "\n<style> body {\n" + background_color + "} </style>\n";
           page.elements().each(function (element) {
             pageHTML += element.toHTML()[0].outerHTML + "\n";
           });
