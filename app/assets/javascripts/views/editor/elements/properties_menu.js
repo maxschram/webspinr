@@ -9,11 +9,27 @@ Webspinr.Views.ElementPropertiesMenu = Backbone.CompositeView.extend({
     "click .save-color": "setColor",
     "mouseleave": "remove",
     "change .font-size": "changeFontSize",
-    "submit .font-size": "changeFontSize"
+    "submit .font-size": "changeFontSize",
+    "click .move-back": "moveBack",
+    "click .move-front": "moveFront"
   },
 
   deleteElement: function () {
     this.model.destroy();
+  },
+
+  moveBack: function (e) {
+    $(e.currentTarget).blur();
+    this.model.get("attrs").style["z-index"] = 0;
+    this.model.save();
+    this.model.trigger("sync");
+  },
+
+  moveFront: function (e) {
+    $(e.currentTarget).blur();
+    this.model.get("attrs").style["z-index"] = 4;
+    this.model.save();
+    this.model.trigger("sync");
   },
 
   changeFontSize: function (e) {
@@ -26,7 +42,6 @@ Webspinr.Views.ElementPropertiesMenu = Backbone.CompositeView.extend({
 
   changeColor: function (e) {
     $(e.currentTarget).blur();
-    // var color = prompt("Enter a color"); //TODO: Replace with colorpicker
     var colorpicker = new Webspinr.Views.Colorpicker({ model: this.model });
     this._colorpicker = colorpicker;
     colorpicker.render();
