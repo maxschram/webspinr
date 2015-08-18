@@ -1,5 +1,7 @@
 Webspinr.Views.NewSite = Backbone.CompositeView.extend({
   model: Webspinr.Models.Site,
+  className: 'panel',
+
   template: function () {
     if (this._editing) {
       return JST["sites/form"]();
