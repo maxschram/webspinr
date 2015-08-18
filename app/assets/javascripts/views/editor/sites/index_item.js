@@ -1,5 +1,6 @@
 Webspinr.Views.SitesIndexItem = Backbone.View.extend({
   template: JST["sites/index_item"],
+  className: 'site-index-item',
 
   events: {
     "click .edit": "editSite",
