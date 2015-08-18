@@ -115,9 +115,14 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
   },
 
   showImageMenu: function () {
-    filepicker.pick(function (blob) {
-      this.createImage(blob.url);
-    }.bind(this));
+    filepicker.pick( {
+      mimetype: 'image/*',
+      services: ['CONVERT', 'BOX','CLOUDDRIVE','COMPUTER','DROPBOX','FACEBOOK','GOOGLE_DRIVE','FLICKR','EVERNOTE','GMAIL','INSTAGRAM','IMAGE_SEARCH','URL','WEBCAM']
+      },
+
+      function (blob) {
+        this.createImage(blob.url);
+      }.bind(this));
     // var imageUrl = prompt("Enter the image url");
     // this.createImage(imageUrl);
   },
