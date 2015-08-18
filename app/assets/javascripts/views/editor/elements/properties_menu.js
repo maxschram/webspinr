@@ -11,7 +11,8 @@ Webspinr.Views.ElementPropertiesMenu = Backbone.CompositeView.extend({
     "change .font-size": "changeFontSize",
     "submit .font-size": "changeFontSize",
     "click .move-back": "moveBack",
-    "click .move-front": "moveFront"
+    "click .move-front": "moveFront",
+    "click .move-middle": "moveMiddle"
   },
 
   deleteElement: function () {
@@ -20,18 +21,21 @@ Webspinr.Views.ElementPropertiesMenu = Backbone.CompositeView.extend({
 
   moveBack: function (e) {
     $(e.currentTarget).blur();
-    var prevZ = this.model.get("attrs").style["z-index"];
-    var newZ = Math.max(prevZ - 1, 0);
-    this.model.get("attrs").style["z-index"] = newZ;
+    this.model.get("attrs").style["z-index"] = 0;
+    this.model.save();
+    this.model.trigger("sync");
+  },
+
+  moveMiddle: function (e) {
+    $(e.currentTarget).blur();
+    this.model.get("attrs").style["z-index"] = 1;
     this.model.save();
     this.model.trigger("sync");
   },
 
   moveFront: function (e) {
     $(e.currentTarget).blur();
-    var prevZ = this.model.get("attrs").style["z-index"];
-    var newZ = Math.min(prevZ + 1, 3);
-    this.model.get("attrs").style["z-index"] = newZ;
+    this.model.get("attrs").style["z-index"] = 2;
     this.model.save();
     this.model.trigger("sync");
   },
