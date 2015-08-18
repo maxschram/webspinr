@@ -9,7 +9,7 @@ Webspinr.Views.SitesIndexItem = Backbone.View.extend({
   },
 
   initialize: function () {
-    this.listenTo(this.model, "sync", this.render);
+    // this.listenTo(this.model, "sync", this.render);
   },
 
   downloadSite: function (e) {
@@ -17,16 +17,30 @@ Webspinr.Views.SitesIndexItem = Backbone.View.extend({
       success: function () {
         var page;
         var pageHTML;
+        var pages = [];
         this.model.pages().each(function (page) {
-          pageHTML = "";
+          var background_color = "background-color: " + page.get("background_color");
+          pageHTML = "<style> body {\n" + background_color + "} </style>";
           page.elements().each(function (element) {
             pageHTML += element.toHTML()[0].outerHTML + "\n";
           });
-          // console.log(pageHTML);
+          var downloadLink = $("<a>")
+          downloadLink.addClass("btn btn-link")
+                      .attr("download", page.get("title")+ ".html")
+                      .html(page.get("title"))
+                      .attr("href", this.makeFile(pageHTML));
+          this.$(".download-links").append(downloadLink);
         }.bind(this));
       }.bind(this)
     });
     $(e.currentTarget).blur();
+  },
+
+  makeFile: function (text) {
+    var data = new Blob([text], { type: 'text/plain'});
+    var textFile = window.URL.createObjectURL(data);
+
+    return textFile;
   },
 
   viewSite : function () {
