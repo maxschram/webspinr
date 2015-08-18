@@ -216,14 +216,6 @@ html, body, #root, .site, #page-container, .page, #elements {
   background: red;
 }
 
-// .element.text {
-// 	z-index: 3;
-// }
-//
-// .element.link {
-// 	z-index: 3;
-// }
-
 .ui-wrapper img {
 	width: 100%;
 	height: 100%;
@@ -313,28 +305,6 @@ html, body, #root, .site, #page-container, .page, #elements {
 	padding-left: 10px;
 	background: white;
 }
-
-// .box {
-// 	z-index: 0;
-// }
-//
-//
-// .element:not(.box) {
-// 	z-index: 3;
-// }
-//
-// .element.image {
-// 	z-index: 2;
-// }
-//
-//
-// .text {
-// 	z-index: 5;
-// }
-//
-// .line {
-// 	z-index: 3;
-// }
 
 p.element {
 	white-space: pre-line;
