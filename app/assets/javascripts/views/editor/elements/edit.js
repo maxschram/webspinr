@@ -124,7 +124,9 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
     var view = this;
 
     this.$el.draggable({
-      stop: this.updatePosition.bind(this)
+      stop: this.updatePosition.bind(this),
+      snap: true,
+      grid: [5, 5]
     });
 
     if (this.model.get("tag") !== "img") {
