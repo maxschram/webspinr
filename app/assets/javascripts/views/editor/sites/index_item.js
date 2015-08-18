@@ -13,6 +13,7 @@ Webspinr.Views.SitesIndexItem = Backbone.View.extend({
   },
 
   downloadSite: function (e) {
+    this.$(".download-links").empty();
     this.model.fetch({
       success: function () {
         var page;
@@ -20,7 +21,7 @@ Webspinr.Views.SitesIndexItem = Backbone.View.extend({
         var pages = [];
         this.model.pages().each(function (page) {
           var background_color = "background-color: " + page.get("background_color");
-          pageHTML = "<style> body {\n" + background_color + "} </style>";
+          pageHTML = "<style> body {\n" + background_color + "} </style>\n";
           page.elements().each(function (element) {
             pageHTML += element.toHTML()[0].outerHTML + "\n";
           });

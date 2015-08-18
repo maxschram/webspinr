@@ -20,6 +20,8 @@ Webspinr.Models.Element = Backbone.Model.extend({
           attrs[attr].forEach(function (klass) {
             html.addClass(klass);
           });
+        } else if (attr === 'href') {
+          debugger;
         } else {
           html.attr(attr, attrs[attr]);
         }
