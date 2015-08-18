@@ -115,8 +115,11 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
   },
 
   showImageMenu: function () {
-    var imageUrl = prompt("Enter the image url");
-    this.createImage(imageUrl);
+    filepicker.pick(function (blob) {
+      this.createImage(blob.url);
+    }.bind(this));
+    // var imageUrl = prompt("Enter the image url");
+    // this.createImage(imageUrl);
   },
 
   createImage: function (src) {

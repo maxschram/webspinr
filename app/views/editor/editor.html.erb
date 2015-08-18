@@ -31,3 +31,7 @@
 
 <%= flash[:errors].join("<br>").html_safe if flash[:errors] %>
 <div id="root"></div>
+
+<script>
+  filepicker.setKey("<%= ENV['filepicker_api_key'] %>");
+</script>

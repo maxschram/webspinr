@@ -2,6 +2,7 @@
 //= require jquery-ui/resizable
 //= require jquery-ui/slider
 //= require jquery_serializejson
+//= require filepicker
 //= require webspinr
 //= require webspinr_editor
 //= require_tree ../templates

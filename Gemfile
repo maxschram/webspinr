@@ -13,7 +13,6 @@ gem 'backbone-on-rails'
 gem 'bcrypt'
 gem 'bootstrap-sass'
 gem 'figaro'
-gem 'filepicker-rails'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
