@@ -20,14 +20,18 @@ Webspinr.Views.ElementPropertiesMenu = Backbone.CompositeView.extend({
 
   moveBack: function (e) {
     $(e.currentTarget).blur();
-    this.model.get("attrs").style["z-index"] = 0;
+    var prevZ = this.model.get("attrs").style["z-index"];
+    var newZ = Math.max(prevZ - 1, 0);
+    this.model.get("attrs").style["z-index"] = newZ;
     this.model.save();
     this.model.trigger("sync");
   },
 
   moveFront: function (e) {
     $(e.currentTarget).blur();
-    this.model.get("attrs").style["z-index"] = 4;
+    var prevZ = this.model.get("attrs").style["z-index"];
+    var newZ = Math.min(prevZ + 1, 3);
+    this.model.get("attrs").style["z-index"] = newZ;
     this.model.save();
     this.model.trigger("sync");
   },
