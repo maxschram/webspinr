@@ -52,6 +52,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	font-family: 'Roboto', sans-serif;
 }
 ol, ul {
 	list-style: none;
@@ -73,6 +74,10 @@ html, body, #root, .site, #page-container, .page, #elements {
 	height: 100%;
 }
 
+body {
+	background: #2D73F3;
+}
+
 #root {
 	height: 100%;
   display: absolute;
@@ -88,6 +93,8 @@ html, body, #root, .site, #page-container, .page, #elements {
 
  .navbar {
 	 margin-bottom: 0;
+	 background: #9EBDF6;
+	 color: #F3F7FE;
  }
 
  .page {
@@ -97,8 +104,8 @@ html, body, #root, .site, #page-container, .page, #elements {
  }
 
  .menu-bar {
-   background: #1A1A1A;
-   width: 260px;
+   background: #2D73F3;
+   width: 240px;
    height: 100%;
    top: 0px;
    float: left;
@@ -113,13 +120,13 @@ html, body, #root, .site, #page-container, .page, #elements {
  }
 
  .menu-button {
-	 outline: 2px solid gray;
+	 outline: 2px solid #0357F1;
    width: 50px;
    height: 50px;
-   background: #1A1A1A;
+   background: #9EBDF6;
    position: absolute;
    top: 25%;
-   color: gray;
+   color: #0357F1;
    border-radius: 3px;
    left: -25px;
    transform: rotate(45deg);
@@ -173,9 +180,12 @@ html, body, #root, .site, #page-container, .page, #elements {
 	 text-align: center;
  }
 
+ .thumbnail {
+	 background: #F3F7FE;
+	 border: none;
+ }
+
  .site-index-item .site-title {
-	//  margin-right: 30px;
-	 font-weight: bold;
 	 font-size: 20px;
  }
 
@@ -221,12 +231,22 @@ html, body, #root, .site, #page-container, .page, #elements {
 	background: darkgray;
 	z-index: 5;
 	position: absolute;
-	box-shadow: 1px 1px black;
+	box-shadow: 1px 1px  5px black;
 	border-radius: 5px;
+	width: 200px;
+}
+
+.element-properties-menu .menu {
+	background: #40A7C9;
+	width: 100%;
 }
 
 .element-properties-menu .btn {
 	color: black;
+}
+
+.element-properties-menu .btn:hover {
+	background: darkgray;
 }
 
 .text-element-form {
@@ -313,7 +333,7 @@ p.element {
 }
 
 .menu-bar .menu {
-	background: darkgray;
+	background: #40A7C9;
 }
 
 
@@ -377,4 +397,10 @@ p.element {
 
  .landing-container {
 	 transform: translateY(300px);
+ }
+
+ .new-site .panel {
+	 background: none;
+	 border: none;
+	 box-shadow: none;
  }
