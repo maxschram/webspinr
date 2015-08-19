@@ -57,7 +57,8 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
         },
         class: [
           "box",
-          "horizontal-line line"
+          "horizontal-line",
+          "line"
         ]
       },
       page_id: this.currentPageView.model.id
@@ -80,7 +81,8 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
         },
         class: [
           "box",
-          "vertical-line line"
+          "vertical-line",
+          "line"
         ]
       },
       page_id: this.currentPageView.model.id
@@ -101,7 +103,8 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
           "z-index": 3
         },
         class: [
-          "link text"
+          "link",
+          "text"
         ],
         href: url
       },
@@ -123,7 +126,8 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
           "z-index": 3
         },
         class: [
-          "link text"
+          "link",
+          "text"
         ],
         href: url
       },
