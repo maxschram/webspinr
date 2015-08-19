@@ -127,7 +127,7 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
       stop: this.updatePosition.bind(this),
       snap: true,
       grid: [4, 4],
-      containment: "#elements"
+      containment: ".page"
     });
 
     if (this.model.get("tag") !== "img" && !this.$el.hasClass("text")) {
@@ -137,7 +137,7 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
         autoHide: true,
         stop: this.updateSize.bind(this),
         grid: [2, 2],
-        containment: "#elements"
+        containment: ".page"
       });
     }
 
