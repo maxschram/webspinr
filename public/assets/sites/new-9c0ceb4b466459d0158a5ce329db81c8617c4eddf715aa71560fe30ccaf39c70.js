@@ -1,2 +1,0 @@
-(function() { this.JST || (this.JST = {}); this.JST["sites/new"] = function(obj){var __p=[],print=function(){__p.push.apply(__p,arguments);};with(obj||{}){__p.push('<form>\n  <label for="title">Title</label>\n  <input type="text" name="title" id="title">\n  <br>\n  <lable for="description">Description</lable>\n  <input type="text" name="description" id="description">\n  <br>\n  <input type="submit" value="Create">\n</form>\n');}return __p.join('');};
-}).call(this);

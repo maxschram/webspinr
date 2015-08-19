@@ -1,2 +1,0 @@
-(function() { this.JST || (this.JST = {}); this.JST["menus/pages"] = function(obj){var __p=[],print=function(){__p.push.apply(__p,arguments);};with(obj||{}){__p.push('<span class="menu-title">Pages</span>\n\n<div class="menu btn-group-vertical" role="group" aria-label="...">\n  <div class="pages btn-group-vertical" role="group" aria-label="...">\n  </div>\n  <button class="btn btn-default new-page">Add</button>\n</div>\n');}return __p.join('');};
-}).call(this);

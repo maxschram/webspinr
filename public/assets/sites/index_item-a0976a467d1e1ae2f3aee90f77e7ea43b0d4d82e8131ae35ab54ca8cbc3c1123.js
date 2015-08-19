@@ -1,2 +1,0 @@
-(function() { this.JST || (this.JST = {}); this.JST["sites/index_item"] = function(obj){var __p=[],print=function(){__p.push.apply(__p,arguments);};with(obj||{}){__p.push('<div class="site-index-item list-group-item">\n  <span class="site-title">',  site.escape("title") ,'</span>\n  <button class="btn btn-primary edit">Edit</button>\n  <button class="btn btn-danger live">View Live</button>\n</div>\n');}return __p.join('');};
-}).call(this);
