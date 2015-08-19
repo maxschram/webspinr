@@ -5,7 +5,8 @@ Webspinr.Views.SitesIndexItem = Backbone.View.extend({
   events: {
     "click .edit": "editSite",
     "click .live": "viewSite",
-    "click .download": "downloadSite"
+    "click .download": "downloadSite",
+    "click .site-title": "editSite"
   },
 
   initialize: function () {

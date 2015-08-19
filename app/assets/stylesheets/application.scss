@@ -185,6 +185,14 @@ body {
 	 border: none;
  }
 
+ .thumbnail .site-title {
+	 cursor: pointer;
+ }
+
+ .thumbnail:hover {
+	 background: lightgray;
+ }
+
  .site-index-item .site-title {
 	 font-size: 20px;
  }
