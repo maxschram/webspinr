@@ -235,8 +235,22 @@ body {
 
 #page-container.editing .element:hover {
   cursor: pointer;
-  /*border: 2px dotted black;*/
-	outline: 2px dotted black;
+	animation-duration: 0.5s;
+	outline-style: dashed;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	animation-name: outline;
+}
+
+@keyframes outline {
+	from {
+		outline-width: 2px;
+		// outline: 2px solid black;
+	}
+	to {
+		// outline: 5px solid green;
+		outline-width: 4px;
+	}
 }
 
 .element.text.editing {
