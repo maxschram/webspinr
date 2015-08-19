@@ -1,17 +1,19 @@
 <div class="menu btn-group-vertical" role="group" aria-label="...">
   <h3 class="menu-title">Page Properties</h3>
 
-  <form>
+  <form class="title-form">
     Title <input type="text" id="title" name="title" value="<%= page.escape("title") %>">
   </form>
-  <form>
+  <form class="width-form">
   Width <input type="number"
+         id="width"
          name="width"
          value="<%= page.escape("width") %>">
   </form>
-  <form>
+  <form class="height-form">
   Height <form class="height">
   <input type="number"
+         id="height"
          name="height"
          value="<%= page.escape("height") %>">
   </form>

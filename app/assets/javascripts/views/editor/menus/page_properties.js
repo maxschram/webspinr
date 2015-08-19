@@ -9,12 +9,16 @@ Webspinr.Views.PagePropertiesMenu = Backbone.CompositeView.extend({
   events: {
     "click .background-image": "setBackgroundImage",
     "click .background-color": "setBackgroundColor",
-    "submit form": "setTitle",
+    "submit .title-form": "setTitle",
     "blur #title": "setTitle",
+    "submit .height-form": "setHeight",
+    "blur #height": "setHeight",
+    "submit .width-form": "setWidth",
+    "blur #width": "setWidth",
     "mouseleave .colorpicker": "removeColorpicker",
     "click .save-color": "setColor",
     "mouseleave": "removeColorpicker",
-    "click .view-page-live": "viewLive"
+    "click .view-page-live": "viewLive",
   },
 
   viewLive: function () {
@@ -23,8 +27,20 @@ Webspinr.Views.PagePropertiesMenu = Backbone.CompositeView.extend({
 
   setTitle: function (e) {
     e.preventDefault();
-    var newTitle = this.$("form").serializeJSON().title;
+    var newTitle = this.$(".title-form").serializeJSON().title;
     this.model.save({title: newTitle});
+  },
+
+  setHeight: function (e) {
+    e.preventDefault();
+    var newHeight = this.$(".height-form").serializeJSON().height;
+    this.model.save({height: newHeight});
+  },
+
+  setWidth: function (e) {
+    e.preventDefault();
+    var newWidth = this.$(".width-form").serializeJSON().width;
+    this.model.save({width: newWidth});
   },
 
   setBackgroundImage: function (e) {
