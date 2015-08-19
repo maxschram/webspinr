@@ -114,7 +114,8 @@ body {
  }
 
  .menu-bar {
-   background: #2D73F3;
+  //  background: #2D73F3;
+	 background: #9EBDF6;
    width: 240px;
    height: 100%;
    top: 0px;
@@ -238,6 +239,7 @@ body {
   cursor: pointer;
 	animation-duration: 0.5s;
 	outline-style: dashed;
+	outline-color: black;
 	animation-iteration-count: infinite;
 	animation-timing-function: linear;
 	animation-name: outline;
