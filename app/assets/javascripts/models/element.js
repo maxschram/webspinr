@@ -27,6 +27,7 @@ Webspinr.Models.Element = Backbone.Model.extend({
           html.attr(attr, attrs[attr]);
         }
       }
+      html.css("transform", "translateY(-50px)");
       return html.html(this.escape("content"));
     }
 });
