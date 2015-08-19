@@ -129,7 +129,7 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
       grid: [4, 4]
     });
 
-    if (this.model.get("tag") !== "img") {
+    if (this.model.get("tag") !== "img" && !this.$el.hasClass("text")) {
       this.$el.resizable();
       this.$el.resizable("destroy");
       this.$el.resizable({
