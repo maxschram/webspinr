@@ -231,16 +231,21 @@ html, body, #root, .site, #page-container, .page, #elements {
 
 .text-element-form {
 	position: relative;
-	width: 700px;
-	height: 200px;
+	width: 100%;
 }
 
 .text-element-form textarea {
 	position: relative;
-	width: 700px;
-	top: -60px;
+	border: 2px dotted green;
+	background: lightgray;
+	outline: none;
+	width: 100%;
+	top: 0;
+	height: 150%;
 	bottom: 0;
 	font-size: 16px;
+	margin-top: -15px;
+	border: none;
 }
 
 .element-properties-menu .heading {
