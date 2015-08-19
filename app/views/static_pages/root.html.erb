@@ -55,7 +55,13 @@
 
 				<h1 class="margin-base-vertical">Welcome to Webspinr</h1>
         <div class="errors">
-          <%= flash[:errors].join("<br>").html_safe if flash[:errors] %>
+					<% if flash[:errors] %>
+					  <% flash[:errors].each do |error| %>
+					    <div class="alert alert-danger" role="alert">
+					      <%= error %>
+					    </div>
+					  <% end %>
+					<% end %>
         </div>
 
 				<form class="login-form margin-base-vertical" action="<%= login_url %>" method="post">
