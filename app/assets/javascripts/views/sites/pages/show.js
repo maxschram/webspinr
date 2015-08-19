@@ -15,7 +15,9 @@ Webspinr.Views.Page = Backbone.CompositeView.extend({
 
   render: function () {
     this.$el.html(this.template({ page: this.model }));
-    this.$el.css("background-image", this.model.get("background_image"));
+    if (this.model.get("background_image")) {
+      this.$el.css("background-image", this.model.get("background_image"));
+    }
     this.$el.css("background-color", this.model.get("background_color"));
     this.$el.css("width", this.model.get("width"));
     this.$el.css("height", this.model.get("height"));

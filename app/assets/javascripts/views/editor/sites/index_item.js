@@ -21,10 +21,16 @@ Webspinr.Views.SitesIndexItem = Backbone.View.extend({
         var pages = [];
         this.model.pages().each(function (page) {
           var background_color = "background-color: " + page.get("background_color");
+          var background_image = "";
+          if (page.get("background_image")) {
+            background_image = "background-image: " + page.get("background_image") +  ";"+
+            "background-repeat: no-repeat; background-size: cover; background-position: center;"
+          }
           pageHTML = "<head><link rel=stylesheet type=text/css href=https://necolas.github.io/normalize.css/3.0.2/normalize.css></head>";
           pageHTML += "\n<style> body {\n" + background_color + ";" +
             "width: " + page.get("width")+ "px;" +
             "height: " + page.get("height") + "px;"+
+            background_image +
             "} </style>\n";
           page.elements().each(function (element) {
             pageHTML += element.toHTML()[0].outerHTML + "\n";
