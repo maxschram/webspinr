@@ -30,8 +30,14 @@ Webspinr.Views.PagePropertiesMenu = Backbone.CompositeView.extend({
   setBackgroundImage: function (e) {
     e.preventDefault();
     $(e.currentTarget).blur();
-    var imageUrl = prompt("Enter an image url");
-    this.model.save({ background_image: "url(" + imageUrl + ")"});
+    filepicker.pick( {
+      mimetype: 'image/*',
+      services: ['CONVERT', 'BOX','CLOUDDRIVE','COMPUTER','DROPBOX','FACEBOOK','GOOGLE_DRIVE','FLICKR','EVERNOTE','GMAIL','INSTAGRAM','IMAGE_SEARCH','URL','WEBCAM']
+      },
+
+      function (blob) {
+        this.model.save({ background_image: "url(" + blob.url + ")"});
+      }.bind(this));
   },
 
   setBackgroundColor: function (e) {
