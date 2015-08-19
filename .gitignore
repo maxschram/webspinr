@@ -16,4 +16,4 @@
 /config/application.yml
 
 # Ignore precompiled assets
-public/assets/**
+public/assets/
