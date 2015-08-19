@@ -11,7 +11,8 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
     "click .text": "createText",
     "click .box-el": "createBox",
     "click .image": "showImageMenu",
-    "click .line": "createLine",
+    "click .horizontal-line": "createHorizontalLine",
+    "click .vertical-line": "createVerticalLine",
     "click .internal-link": "createInternalLink",
     "click .external-link": "createExternalLink"
   },
@@ -41,7 +42,7 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
     this.currentPageView.collection.add(element);
   },
 
-  createLine: function () {
+  createHorizontalLine: function () {
     var element = new Webspinr.Models.Element({
       tag: "div",
       attrs: {
@@ -56,7 +57,30 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
         },
         class: [
           "box",
-          "line"
+          "horizontal-line line"
+        ]
+      },
+      page_id: this.currentPageView.model.id
+    });
+    this.saveElement(element);
+  },
+
+  createVerticalLine: function () {
+    var element = new Webspinr.Models.Element({
+      tag: "div",
+      attrs: {
+        style: {
+          top: "50%",
+          left: "50%",
+          position: "absolute",
+          background: "black",
+          width: "5px",
+          height: "1000px",
+          "z-index": 3
+        },
+        class: [
+          "box",
+          "vertical-line line"
         ]
       },
       page_id: this.currentPageView.model.id

@@ -139,9 +139,12 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
       });
     }
 
-    if (this.$el.hasClass("line")) {
+    if (this.$el.hasClass("horizontal-line")) {
       this.$el.resizable("option", "maxHeight", 5);
       this.$el.resizable("option", "minHeight", 5);
+    } else if (this.$el.hasClass("vertical-line")) {
+      this.$el.resizable("option", "maxWidth", 5);
+      this.$el.resizable("option", "minWidth", 5);
     }
     // Backbone.CompositeView.prototype.onRender.call(this);
   }
