@@ -23,7 +23,7 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
 
   createText: function () {
     var element = new Webspinr.Models.Element({
-      tag: "p",
+      tag: "span",
       content: "Click here to enter your text...",
       page_id: this.currentPageView.model.id,
       attrs: {
