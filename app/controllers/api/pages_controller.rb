@@ -32,6 +32,13 @@ class Api::PagesController < ApplicationController
   private
 
   def page_params
-    params.require(:page).permit(:title, :site_id, :background_color, :background_image)
+    params.require(:page).permit(
+      :title,
+      :site_id,
+      :background_color,
+      :background_image,
+      :width,
+      :height
+    )
   end
 end

@@ -27,6 +27,9 @@ Webspinr.Views.EditPage = Backbone.CompositeView.extend({
     this.$el.html(this.template({ page: this.model }));
     this.$el.css("background-image", this.model.get("background_image"));
     this.$el.css("background-color", this.model.get("background_color"));
+    this.$el.css("width", this.model.get("width"));
+    this.$el.css("height", this.model.get("height"));
+    // this.$el.css("box-sizing", "border-box");
     this.attachSubviews();
     this.onRender();
     return this;
