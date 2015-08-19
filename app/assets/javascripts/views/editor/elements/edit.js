@@ -126,7 +126,8 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
     this.$el.draggable({
       stop: this.updatePosition.bind(this),
       snap: true,
-      grid: [4, 4]
+      grid: [4, 4],
+      containment: "#elements"
     });
 
     if (this.model.get("tag") !== "img" && !this.$el.hasClass("text")) {
