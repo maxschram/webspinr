@@ -12,11 +12,18 @@ Webspinr.Views.NewSite = Backbone.CompositeView.extend({
 
   events: {
     "click .new-site-button": "newSite",
+    "click .cancel": "cancelSite",
     "submit form": "createSite"
   },
 
   initialize: function () {
     this._editing = false;
+  },
+
+  cancelSite: function (e) {
+    e.preventDefault();
+    this._editing = false;
+    this.render();
   },
 
   newSite: function () {
