@@ -2,9 +2,21 @@
   <h3 class="menu-title">Page Properties</h3>
 
   <form>
-    Title: <input type="text" id="title" name="title" value="<%= page.escape("title") %>">
+    Title <input type="text" id="title" name="title" value="<%= page.escape("title") %>">
+  </form>
+  <form>
+  Width <input type="number"
+         name="width"
+         value="<%= page.escape("width") %>">
+  </form>
+  <form>
+  Height <form class="height">
+  <input type="number"
+         name="height"
+         value="<%= page.escape("height") %>">
   </form>
   <button class="background-color btn btn-default">Background Color</button>
   <button class="background-image btn btn-default">Background Image</button>
+  <form class="width">
   <button class="view-page-live btn btn-danger">View Page Live</button>
 </div>
