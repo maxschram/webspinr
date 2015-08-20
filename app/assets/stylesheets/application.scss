@@ -78,6 +78,19 @@ body {
 	background: #9EBDF6;
 }
 
+@media (min-width: 1400px) {
+	.container {
+		width: 1350px;
+	}
+}
+
+@media (min-width: 1600px) {
+	.container {
+		width: 1550px;
+	}
+}
+
+
 #root {
 	height: 100%;
   display: absolute;
