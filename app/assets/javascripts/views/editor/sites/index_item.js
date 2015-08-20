@@ -16,19 +16,22 @@ Webspinr.Views.SitesIndexItem = Backbone.View.extend({
 
   createThumbnail: function () {
     var url = "shielded-cliffs-6616.herokuapp.com" + "/sites/" + this.model.id;
-    $.ajax("http://api.page2images.com/restfullink?p2i_url=" + url+ "&p2i_key=2d8eda2ffe5ba92f", {
-      dataType: "json",
-      success: function (data) {
-        if (data.status === "finished") {
-          this.$(".thumbnail-image").attr("src", data.image_url);
-        } else if (data.status === "processing") {
-          setTimeout(this.createThumbnail.bind(this, site), (data.estimated_need_time + 1) * 1000 );
-        }
-      }.bind(this),
-      error: function () {
-        debugger
-      }
-    });
+    // $.ajax("http://api.page2images.com/restfullink?p2i_url=" + url+ "&p2i_key=2d8eda2ffe5ba92f"
+    //   + "&p2i_size=1200x800", {
+    //   dataType: "json",
+    //   success: function (data) {
+    //     if (data.status === "finished") {
+    //       this.$(".thumbnail-image").attr("src", data.image_url);
+    //     } else if (data.status === "processing") {
+    //       setTimeout(this.createThumbnail.bind(this), (data.estimated_need_time + 1) * 1000 );
+    //     }
+    //   }.bind(this),
+    //   error: function () {
+    //     debugger
+    //   }
+    // });
+    // var preview = $("<iframe>")
+    this.$(".thumbnail-image").attr("src", "google.com");
   },
 
   downloadSite: function (e) {
@@ -82,6 +85,10 @@ Webspinr.Views.SitesIndexItem = Backbone.View.extend({
 
   render: function () {
     this.$el.html(this.template({ site: this.model }));
+    this.$(".thumbnail-image").attr("src", "http://localhost:3000/sites/" + this.model.id);
+    this.$(".thumbnail-image").zoomer({
+      zoom: 0.25
+    });
     return this;
   }
 });

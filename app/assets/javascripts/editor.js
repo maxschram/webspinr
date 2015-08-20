@@ -6,6 +6,7 @@
 //= require webspinr
 //= require filesaver.min
 //= require jszip.min
+//= require jquery.zoomer
 //= require webspinr_editor
 //= require_tree ../templates
 //= require_tree ./models
