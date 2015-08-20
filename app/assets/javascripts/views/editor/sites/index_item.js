@@ -85,7 +85,7 @@ Webspinr.Views.SitesIndexItem = Backbone.View.extend({
 
   render: function () {
     this.$el.html(this.template({ site: this.model }));
-    this.$(".thumbnail-image").attr("src", "http://localhost:3000/sites/" + this.model.id);
+    this.$(".thumbnail-image").attr("src", "http://" + location.host + "/sites/" + this.model.id);
     this.$(".thumbnail-image").zoomer({
       zoom: 0.25,
       message: "Edit Site"
