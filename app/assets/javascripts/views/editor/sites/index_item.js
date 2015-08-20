@@ -10,6 +10,25 @@ Webspinr.Views.SitesIndexItem = Backbone.View.extend({
   },
 
   initialize: function () {
+    this.createThumbnail();
+  },
+
+
+  createThumbnail: function () {
+    var url = "shielded-cliffs-6616.herokuapp.com" + "/sites/" + this.model.id;
+    $.ajax("http://api.page2images.com/restfullink?p2i_url=" + url+ "&p2i_key=2d8eda2ffe5ba92f", {
+      dataType: "json",
+      success: function (data) {
+        if (data.status === "finished") {
+          this.$(".thumbnail-image").attr("src", data.image_url);
+        } else if (data.status === "processing") {
+          setTimeout(this.createThumbnail.bind(this, site), (data.estimated_need_time + 1) * 1000 );
+        }
+      }.bind(this),
+      error: function () {
+        debugger
+      }
+    });
   },
 
   downloadSite: function (e) {
