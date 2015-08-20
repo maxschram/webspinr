@@ -15,7 +15,7 @@ Webspinr.Views.SitesIndex = Backbone.CompositeView.extend({
   },
 
   createThumbnail: function (site) {
-    var url = window.location.hostname + "/sites/" + site.id;
+    var url = "shielded-cliffs-6616.herokuapp.com" + "/sites/" + site.id;
     $.ajax("http://api.page2images.com/restfullink?p2i_url=" + url+ "&p2i_key=2d8eda2ffe5ba92f", {
       dataType: "json",
       success: function (data) {
