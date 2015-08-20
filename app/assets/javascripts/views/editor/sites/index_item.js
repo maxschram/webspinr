@@ -54,7 +54,7 @@ Webspinr.Views.SitesIndexItem = Backbone.View.extend({
   },
 
   viewSite : function () {
-    window.open("sites#" + this.model.id);
+    window.open("sites/" + this.model.id);
   },
 
   editSite: function () {

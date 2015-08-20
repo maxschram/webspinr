@@ -101,7 +101,7 @@ Webspinr.Views.EditSite = Backbone.CompositeView.extend({
     e.preventDefault();
     $(e.currentTarget).blur();
     //TODO: change site title to address
-    window.open("sites/#/"+ this.model.id + "/" + this.currentPage().get("title"));
+    window.open("sites/"+ this.model.id + "/" + this.currentPage().get("title"));
   },
 
   render: function () {

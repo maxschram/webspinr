@@ -4,3 +4,7 @@ Webspinr.initialize = function () {
   });
   Backbone.history.start();
 };
+
+$(document).ready(function () {
+  Webspinr.initialize();
+});

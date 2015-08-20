@@ -1,12 +1,21 @@
 Webspinr.Routers.SiteRouter = Backbone.Router.extend({
 
   routes: {
+    "": "showSite",
     ':id': 'showSiteIndex',
     ':id/:pageName': 'showSitePage'
   },
 
   initialize: function (options) {
     this.$rootEl = options.$rootEl;
+    this.siteId = options.siteId;
+  },
+
+  showSite: function () {
+    var site = new Webspinr.Models.Site({ id: this.siteId });
+    site.fetch();
+    var view = new Webspinr.Views.Site({ model: site});
+    this._swapView(view);
   },
 
   editSitePage: function (id, pageId) {

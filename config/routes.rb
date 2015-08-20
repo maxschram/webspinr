@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   get 'editor', to: 'editor#load'
   get 'sites', to: 'sites#show'
+  get 'sites/:id', to: 'sites#show'
 
   get 'signup', to: 'users#new', as: 'signup'
   post 'signup', to: 'users#create'

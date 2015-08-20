@@ -22,7 +22,7 @@ Webspinr.Views.PagePropertiesMenu = Backbone.CompositeView.extend({
   },
 
   viewLive: function () {
-    window.open("sites#/" + this.site.id + "/" + this.model.escape("title"));
+    window.open("sites/" + this.site.id + "/" + this.model.escape("title"));
   },
 
   setTitle: function (e) {

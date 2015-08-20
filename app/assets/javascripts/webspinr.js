@@ -4,7 +4,3 @@ window.Webspinr = {
   Views: {},
   Routers: {}
 };
-
-$(document).ready(function () {
-  Webspinr.initialize();
-});
