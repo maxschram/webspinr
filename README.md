@@ -52,7 +52,7 @@ I will add a button that will package up the html from the page and instead of p
 
 ### Bonus Features (TBD)
 - [x] Download site as a zip file
-- [ ] Add site previewthumbnails to site index
+- [x] Add site preview thumbnails to site index
 - [ ] Option to create the website a separate heroku app
 - [ ] Option to download the apps html and css and a lite webserver
 - [ ] Adding dynamic content to created sites
