@@ -15,6 +15,20 @@ Webspinr.Views.ElementPropertiesMenu = Backbone.CompositeView.extend({
     "click .move-middle": "moveMiddle"
   },
 
+  remove: function (e) {
+    this.resetTop(e);
+    Backbone.CompositeView.prototype.remove.call(this);
+  },
+
+  resetTop: function (e) {
+    console.log(e.relatedTarget);
+    if ($(e.relatedTarget).hasClass("elements")) {
+      $(".element").each(function (idx, el) {
+        $(el).removeClass("top");
+      });
+    }
+  },
+
   deleteElement: function () {
     this.model.destroy();
   },

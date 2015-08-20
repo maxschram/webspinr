@@ -7,6 +7,7 @@
 //= require filesaver.min
 //= require jszip.min
 //= require jquery.zoomer
+//= require jquery.overlaps
 //= require webspinr_editor
 //= require_tree ../templates
 //= require_tree ./models

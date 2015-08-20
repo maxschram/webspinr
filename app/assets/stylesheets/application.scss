@@ -258,6 +258,16 @@ body {
 	animation-name: outline;
 }
 
+#page-container.editing .element.top {
+  cursor: pointer;
+	animation-duration: 0.5s;
+	outline-style: dashed;
+	outline-color: lightgreen;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	animation-name: outline;
+}
+
 @keyframes outline {
 	from {
 		outline-width: 2px;
@@ -282,7 +292,7 @@ body {
 
 .element-properties-menu {
 	background: darkgray;
-	z-index: 5;
+	z-index: 99;
 	position: absolute;
 	box-shadow: 2px 2px  10px black;
 	border-radius: 5px;
@@ -475,4 +485,8 @@ p.element {
 	 margin: 0 auto;
 	 margin-top: 15%;
 	 border: 2px solid black;
+ }
+
+ .top {
+	 z-index: 90 !important;
  }

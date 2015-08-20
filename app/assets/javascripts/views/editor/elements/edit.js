@@ -12,11 +12,72 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
     "click": "clickElement",
     "blur textarea": "saveText",
     "submit form": "saveText",
-    "contextmenu": "showPropertiesMenu"
+    "contextmenu": "showPropertiesMenu",
+    "wheel": "handleScroll",
+    "mouseleave": "resetTop"
   },
 
-  className: function (){
+  // events : function () {
+  //   var e = {
+  //     "dblclick": "editElement",
+  //     "click": "clickElement",
+  //     "blur textarea": "saveText",
+  //     "submit form": "saveText",
+  //     "contextmenu": "showPropertiesMenu",
+  //     "wheel": "handleScroll",
+  //     "mouseenter": "checkTop"
+  //   };
+  //
+  //   if (this.onTop) {
+  //     _.extend(e, { "mouseleave": "removeTop" });
+  //   }
+  //
+  //   return e;
+  // },
+
+  resetTop: function (e) {
+    console.log(e.relatedTarget);
+    if ($(e.relatedTarget).hasClass("elements")) {
+      $(".element").each(function (idx, el) {
+        $(el).removeClass("top");
+      });
+    }
+  },
+
+  className: function () {
     return "element " + this.model.get("classes");
+  },
+
+  checkTop: function () {
+    this.delegateEvents();
+    if (this.$el.hasClass("top")) {
+      this.onTop = true;
+    }
+  },
+
+  removeTop: function () {
+    this.$el.removeClass("top");
+  },
+
+  handleScroll: function (e) {
+    e.preventDefault();
+    var overlapped = this.$el.overlaps(".element");
+    if (e.originalEvent.deltaY < 0) {
+      this.overlapIdx += 1;
+    } else if (e.originalEvent.deltaY > 0) {
+      this.overlapIdx -= 1;
+    }
+
+    this.overlapIdx = this.overlapIdx % overlapped.length;
+    if (this.overlapIdx < 0) {
+      this.overlapIdx = overlapped.length - this.overlapIdx;
+    }
+    this.overlapIdx = Math.abs(this.overlapIdx);
+
+    $(".element").each(function (idx, el) {
+      $(el).removeClass("top");
+    });
+    overlapped.eq(this.overlapIdx).addClass("top");
   },
 
   tagName: function () {
@@ -25,6 +86,7 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.listenTo(this.model, "sync", this.render);
+    this.overlapIdx = 0;
   },
 
   showPropertiesMenu: function (e) {
