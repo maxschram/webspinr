@@ -53,11 +53,7 @@ I will add a button that will package up the html from the page and instead of p
 ### Bonus Features (TBD)
 - [x] Download site as a zip file
 - [x] Add site preview thumbnails to site index
-- [ ] Option to create the website a separate heroku app
-- [ ] Option to download the apps html and css and a lite webserver
-- [ ] Adding dynamic content to created sites
-- [ ] Adding drag select to remove elements
-
+- [x] Using the scrollwheel over overlapping elements cycles through them
 
 
 [phase-one]: ./docs/phases/phase1.md
