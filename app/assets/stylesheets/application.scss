@@ -341,7 +341,10 @@ body {
 .element-properties-menu .styles {
 	background: white;
 	padding: 2px 5px 2px 5px;
-	// transform: translateX(25%);
+}
+
+.element-properties-menu .styles button {
+	transform: translateX(30px);
 }
 
 .element-properties-menu .menu button {
