@@ -19,6 +19,8 @@ Webspinr.Views.SitesIndexItem = Backbone.View.extend({
         var page;
         var pageHTML;
         var pages = [];
+        var zip = new JSZip();
+        var site = zip.folder(this.model.get("title"));
         this.model.pages().each(function (page) {
           var background_color = "background-color: " + page.get("background_color");
           var background_image = "";
@@ -35,13 +37,10 @@ Webspinr.Views.SitesIndexItem = Backbone.View.extend({
           page.elements().each(function (element) {
             pageHTML += element.toHTML()[0].outerHTML + "\n";
           });
-          var downloadLink = $("<a>")
-          downloadLink.addClass("btn btn-link")
-                      .attr("download", page.get("title")+ ".html")
-                      .html(page.get("title") + ".html")
-                      .attr("href", this.makeFile(pageHTML));
-          this.$(".download-links").append(downloadLink);
+          site.file(page.get("title") + ".html", pageHTML);
         }.bind(this));
+        var content = zip.generate({ type: "blob" });
+        saveAs(content, this.model.get("title") + ".zip");
       }.bind(this)
     });
     $(e.currentTarget).blur();
