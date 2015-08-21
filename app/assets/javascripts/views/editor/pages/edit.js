@@ -11,6 +11,7 @@ Webspinr.Views.EditPage = Backbone.CompositeView.extend({
     this.listenTo(this.collection, 'add', this.addElementView);
     this.listenTo(this.collection, "remove", this.removeElementView);
     this.collection.each(this.addElementView.bind(this));
+    editorTour.start();
   },
 
   addElementView: function (element) {
@@ -34,7 +35,6 @@ Webspinr.Views.EditPage = Backbone.CompositeView.extend({
     this.$el.css("box-sizing", "border-box");
     this.attachSubviews();
     this.onRender();
-    editorTour.start();
     return this;
   }
 });

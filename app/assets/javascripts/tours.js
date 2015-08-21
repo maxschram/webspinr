@@ -108,23 +108,31 @@ editorTour.addStep('open-menu-tray', {
 
 editorTour.addStep('mouseover-box', {
   title: "Elements Menu",
-  text: "Clicking on these buttons will create a new element on your page",
+  text: "Clicking on these buttons will create a new element on your page. Click this button to create a new box on your page",
+  beforeShowPromise: function () {
+    return new Promise(function (resolve, reject) {
+      setTimeout(resolve, 500);
+    });
+  },
   attachTo: '.box-el right',
+  advanceOn: ".box-el click",
   buttons: []
 });
 
-// editorTour.addStep('click-box', {
-//   title: "Elements Menu",
-//   text: "Click this button to create a new box on your page",
-//   attachTo: '.box-el right'
-// });
+editorTour.addStep('page-properties-menu', {
+  title: "Page Properties Menu",
+  text: "This menu allows you to change the properties of this page. Try changing the title to something more interesting",
+  attachTo: '.title-form right',
+  buttons: [],
+  advanceOn: '#title keydown'
+});
 
-// editorTour.addStep('page-properties-menu', {
-//   title: "Page Properties Menu",
-//   text: "Click this button to create a new box on your page",
-//   attachTo: '.page-properties-menu right',
-//   buttons: [],
-//   // advanceOn: '.box-el click'
-// });
+editorTour.addStep('page-properties-menu', {
+  title: "Pages Menu",
+  text: "Click these buttons to edit different pages of your site. Try creating a new page",
+  attachTo: '.pages-menu right',
+  buttons: [],
+  advanceOn: '.new-page click'
+});
 
-// mediator.on('element-drag', editorTour.next);
+mediator.on('element-drag', editorTour.next);
