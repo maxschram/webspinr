@@ -9,8 +9,8 @@
 //= require jquery.zoomer
 //= require jquery.overlaps
 //= require cheet.min
-//= require shepard.min
 //= require tether.min
+//= require shepard.min
 //= require webspinr_editor
 //= require_tree ../templates
 //= require_tree ./models
