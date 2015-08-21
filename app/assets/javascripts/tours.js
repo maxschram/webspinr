@@ -3,7 +3,7 @@ mediator = new Shepherd.Evented;
 indexTour = new Shepherd.Tour({
   defaults: {
     classes: 'shepherd-theme-arrows',
-    showCancelLink: true
+    showCancelLink: true,
   }
 });
 
@@ -31,7 +31,12 @@ indexTour.addStep('editing', {
 editorTour = new Shepherd.Tour({
   defaults: {
     classes: 'shepherd-theme-arrows',
-    showCancelLink: true
+    showCancelLink: true,
+    when: {
+      cancel: function () {
+        editorTour.show("end");
+      }
+    }
   }
 });
 
@@ -151,6 +156,12 @@ editorTour.addStep('page-properties-menu', {
   attachTo: '.pages-menu right',
   buttons: [],
   advanceOn: '.new-page click'
+});
+
+editorTour.addStep('end', {
+  title: "Have Fun",
+  text: "We hope you enjoy using Webspinr",
+  attachTo: '.navbar bottom'
 });
 
 mediator.on('element-drag', editorTour.next);
