@@ -112,6 +112,25 @@ editorTour.addStep('editing', {
   advanceOn: '.move-middle click'
 });
 
+editorTour.addStep('scrolling', {
+  title: "Stacked Elements",
+  text: "Sometimes you have stacked elements and it's hard to edit them. <br> Scroll your mousewheel up and down while hovering over an element",
+  attachTo: '.element.box top',
+  advanceOn: '.element mousewheel'
+});
+
+editorTour.addStep('scrolling', {
+  title: "Stacked Elements",
+  text: "This will cycle through overlapping elements and bring them temporarily<br> to the front. The currently selected element will have a green border<br>",
+  attachTo: '.element.box top',
+});
+
+editorTour.addStep('scrolling', {
+  title: "Stacked Elements",
+  text: "You can easily move and edit the properties of the selected element.<br>Try it out a few times before you move on",
+  attachTo: '.element.box top',
+});
+
 editorTour.addStep('open-menu-tray', {
   title: "Menu Tray",
   text: "Hover over this button to open up the menu tray",
@@ -157,6 +176,7 @@ editorTour.addStep('page-properties-menu', {
   buttons: [],
   advanceOn: '.new-page click'
 });
+
 
 editorTour.addStep('end', {
   title: "Have Fun",
