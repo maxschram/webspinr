@@ -469,7 +469,15 @@ p.element {
  }
 
  .landing-container {
-	 transform: translateY(300px);
+	 transform: translateY(220px);
+ }
+
+ .tabs .tab {
+	 background: #F9F9F8 !important;
+ }
+
+ .tabs .tab {
+	 border-bottom-color: rgb(221, 221, 221);
  }
 
  .new-site .panel {
