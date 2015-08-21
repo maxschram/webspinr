@@ -2,7 +2,8 @@ mediator = new Shepherd.Evented;
 
 indexTour = new Shepherd.Tour({
   defaults: {
-    classes: 'shepherd-theme-arrows'
+    classes: 'shepherd-theme-arrows',
+    showCancelLink: true
   }
 });
 
@@ -29,7 +30,8 @@ indexTour.addStep('editing', {
 
 editorTour = new Shepherd.Tour({
   defaults: {
-    classes: 'shepherd-theme-arrows'
+    classes: 'shepherd-theme-arrows',
+    showCancelLink: true
   }
 });
 

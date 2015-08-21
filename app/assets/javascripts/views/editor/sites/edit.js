@@ -49,6 +49,7 @@ Webspinr.Views.EditSite = Backbone.CompositeView.extend({
 
   toggleMenu: function () {
     this.$(".menu-bar").toggleClass("show");
+    this.$(".menu-button").toggleClass("show");
   },
 
   currentPage : function () {

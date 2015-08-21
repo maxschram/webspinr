@@ -137,7 +137,8 @@ body {
    position: relative;
    z-index: 99;
    transition: left 0.5s;
-   left: -280px;
+   left: -240px;
+	//  border-right: 2px solid #0357F1;
  }
 
  .menu-bar.show {
@@ -145,7 +146,7 @@ body {
  }
 
  .menu-button {
-	 outline: 2px solid #0357F1;
+	//  outline: 2px solid #0357F1;
    width: 50px;
    height: 50px;
    background: #9EBDF6;
@@ -156,17 +157,22 @@ body {
    left: -25px;
    transform: rotate(45deg);
 	 z-index: 50;
+	 transition: left 0.5s;
  }
 
- .menu-button span {
-   font-size: 50px;
-   left: 20px;
-   top: -5px;
-   display: block;
-   transform-origin: center;
-   transform: rotate(45deg);
-   position: relative;
- }
+	.menu-button.show {
+	  left: 215px;
+	}
+
+.menu-button span {
+	 font-size: 50px;
+	 left: 20px;
+	 top: -5px;
+	 display: block;
+	 transform-origin: center;
+	 transform: rotate(45deg);
+	 position: relative;
+	}
 
  .elements-menu {
    width: 80px;
