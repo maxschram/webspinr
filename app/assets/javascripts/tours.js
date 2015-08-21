@@ -8,14 +8,14 @@ indexTour = new Shepherd.Tour({
 });
 
 indexTour.addStep('welcome', {
-  title: "Welcome to the Editor",
+  title: "Welcome to Webspinr",
   text: "Here you can view all of the sites you've created. Let's take a tour of the main features",
   attachTo: '.navbar bottom'
 });
 
 indexTour.addStep('site-preview', {
   title: "Site preview",
-  text: "This is a site preivew. You can click here to view your sites live in a new tab",
+  text: "This is a site preview. You can click here to view your sites live in a new tab",
   attachTo: '.zoomer-cover',
   advanceOn: {selector: ".zoomer-cover a", event: "click"}
 });

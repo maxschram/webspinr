@@ -9,6 +9,7 @@
 //= require jquery.zoomer
 //= require jquery.overlaps
 //= require cheet.min
+//= require cookies
 //= require tether.min
 //= require shepard.min
 //= require tours

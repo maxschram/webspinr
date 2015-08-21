@@ -11,7 +11,14 @@ Webspinr.Views.EditPage = Backbone.CompositeView.extend({
     this.listenTo(this.collection, 'add', this.addElementView);
     this.listenTo(this.collection, "remove", this.removeElementView);
     this.collection.each(this.addElementView.bind(this));
-    editorTour.start();
+    this.startTour();
+  },
+
+  startTour: function () {
+    if (!docCookies.getItem("editorTour")) {
+      editorTour.start();
+      docCookies.setItem("editorTour", "done");
+    }
   },
 
   addElementView: function (element) {

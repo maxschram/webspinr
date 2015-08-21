@@ -27,10 +27,17 @@ Webspinr.Views.SitesIndex = Backbone.CompositeView.extend({
     subview.render();
   },
 
+  startTour: function () {
+    if (!docCookies.getItem("indexTour")) {
+      indexTour.start();
+      docCookies.setItem("indexTour", "done");
+    }
+  },
+
   render: function () {
     this.$el.html(this.template());
     this.attachSubviews();
-    indexTour.start();
+    this.startTour();
     return this;
   }
 });
