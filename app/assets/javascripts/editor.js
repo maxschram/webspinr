@@ -11,6 +11,7 @@
 //= require cheet.min
 //= require tether.min
 //= require shepard.min
+//= require tours
 //= require webspinr_editor
 //= require_tree ../templates
 //= require_tree ./models
