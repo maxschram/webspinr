@@ -61,7 +61,7 @@ editorTour.addStep('editing', {
 
 editorTour.addStep('editing', {
   title: "Editing Text",
-  text: "Type in a nice poem or how you're feeling today. When you're done, click outside the box",
+  text: "Type in a nice poem or how you're feeling today. <br>When you're done, click outside the box",
   attachTo: '.element.text:not(.link) top',
   buttons: [],
   advanceOn: '.elements click'
@@ -93,8 +93,7 @@ editorTour.addStep('editing', {
 
 editorTour.addStep('editing', {
   title: "Properites Menu",
-  text: "These buttons allow you to change the order that elements stack. " +
-  "Try bringing this box to the front layer so it sits on top",
+  text: "These buttons allow you to change the order that elements stack. <br> Try bringing this box to the front layer so it sits on top",
   attachTo: '.move-front left',
   buttons: [],
   advanceOn: '.move-front click'
@@ -118,7 +117,7 @@ editorTour.addStep('open-menu-tray', {
 
 editorTour.addStep('mouseover-box', {
   title: "Elements Menu",
-  text: "Clicking on these buttons will create a new element on your page. Click this button to create a new box on your page",
+  text: "Clicking on these buttons will create a new element on your page. <br> Click this button to create a new box on your page",
   beforeShowPromise: function () {
     return new Promise(function (resolve, reject) {
       setTimeout(resolve, 500);
@@ -132,12 +131,7 @@ editorTour.addStep('mouseover-box', {
 
 editorTour.addStep('page-properties-menu', {
   title: "Page Properties Menu",
-  beforeShowPromise: function () {
-    return new Promise(function (resolve, reject) {
-      setTimeout(resolve, 500);
-    });
-  },
-  text: "This menu allows you to change the properties of this page. Try changing the title to something more interesting",
+  text: "This menu allows you to change the properties of this page. <br>Try changing the title to something more interesting",
   attachTo: '.title-form right',
   buttons: [],
   advanceOn: '#title keydown'
