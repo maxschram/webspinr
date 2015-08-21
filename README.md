@@ -54,6 +54,7 @@ I will add a button that will package up the html from the page and instead of p
 - [x] Download site as a zip file
 - [x] Add site preview thumbnails to site index
 - [x] Using the scrollwheel over overlapping elements cycles through them
+- [x] Add site tour
 
 
 [phase-one]: ./docs/phases/phase1.md
