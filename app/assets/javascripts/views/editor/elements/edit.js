@@ -162,6 +162,7 @@ Webspinr.Views.EditElement = Backbone.CompositeView.extend({
 
     this.$el.draggable({
       stop: this.updatePosition.bind(this),
+      start: function () { mediator.trigger('element-drag')},
       snap: true,
       grid: [4, 4],
       containment: ".page"

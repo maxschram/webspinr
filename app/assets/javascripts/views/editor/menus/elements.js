@@ -100,6 +100,7 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
           top: "50%",
           left: "50%",
           position: "absolute",
+          "font-size": "16px",
           "z-index": 3
         },
         class: [
@@ -123,6 +124,7 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
           top: "50%",
           left: "50%",
           position: "absolute",
+          "font-size": "16px",
           "z-index": 3
         },
         class: [

@@ -34,6 +34,7 @@ Webspinr.Views.EditPage = Backbone.CompositeView.extend({
     this.$el.css("box-sizing", "border-box");
     this.attachSubviews();
     this.onRender();
+    editorTour.start();
     return this;
   }
 });
