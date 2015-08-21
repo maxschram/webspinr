@@ -7,7 +7,7 @@ Webspinr.Views.ElementPropertiesMenu = Backbone.CompositeView.extend({
     "click .color": "changeColor",
     "click .style": "changeStyle",
     "click .save-color": "setColor",
-    "mouseleave": "remove",
+    "mouseleave": "handleMouseLeave",
     "change .font-size": "changeFontSize",
     "submit .font-size": "changeFontSize",
     "click .move-back": "moveBack",
@@ -15,9 +15,9 @@ Webspinr.Views.ElementPropertiesMenu = Backbone.CompositeView.extend({
     "click .move-middle": "moveMiddle"
   },
 
-  remove: function (e) {
+  handleMouseLeave: function (e) {
     this.resetTop(e);
-    Backbone.CompositeView.prototype.remove.call(this);
+    this.remove();
   },
 
   resetTop: function (e) {
@@ -31,6 +31,7 @@ Webspinr.Views.ElementPropertiesMenu = Backbone.CompositeView.extend({
 
   deleteElement: function () {
     this.model.destroy();
+    this.remove();
   },
 
   moveBack: function (e) {
