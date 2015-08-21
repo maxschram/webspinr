@@ -191,8 +191,8 @@ Webspinr.Views.ElementsMenu = Backbone.View.extend({
           top: "50%",
           left: "50%",
           position: "absolute",
-          width: "50px",
-          height: "50px",
+          width: "200px",
+          height: "200px",
           background: "darksalmon",
           "z-index": 2
         },
