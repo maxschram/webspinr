@@ -6,7 +6,8 @@ Webspinr.Views.EditSite = Backbone.CompositeView.extend({
     "mouseenter .menu-button": "toggleMenu",
     "mouseleave .menu-bar": "toggleMenu",
     "click .new-page": "addPage",
-    "click .index": "viewIndex"
+    "click .index": "viewIndex",
+    "mouseenter .elements": "removeMenu"
   },
 
 
@@ -50,6 +51,11 @@ Webspinr.Views.EditSite = Backbone.CompositeView.extend({
   toggleMenu: function () {
     this.$(".menu-bar").toggleClass("show");
     this.$(".menu-button").toggleClass("show");
+  },
+
+  removeMenu: function () {
+    this.$(".menu-bar").removeClass("show");
+    this.$(".menu-button").removeClass("show");
   },
 
   currentPage : function () {
