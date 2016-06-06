@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150819214728) do
+ActiveRecord::Schema.define(version: 20160606025652) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20150819214728) do
     t.string   "background_image", default: "",   null: false
     t.string   "background_color",                null: false
     t.integer  "height",           default: 800,  null: false
-    t.integer  "width",            default: 1200, null: false
+    t.integer  "width",            default: 1600, null: false
   end
 
   add_index "pages", ["site_id"], name: "index_pages_on_site_id", using: :btree
