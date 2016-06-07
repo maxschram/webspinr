@@ -14,6 +14,7 @@ gem 'bcrypt'
 gem 'bootstrap-sass'
 gem 'figaro'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'seed_dump'
 
 group :development, :test do
   gem 'byebug'
