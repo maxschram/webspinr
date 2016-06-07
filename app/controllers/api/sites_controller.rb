@@ -3,7 +3,7 @@ class Api::SitesController < ApplicationController
   before_action :require_owner, except: [:create, :index, :show]
 
   def index
-    @sites = current_user.sites
+    @sites = current_user.sites.order(:created_at)
     render 'index'
   end
 
